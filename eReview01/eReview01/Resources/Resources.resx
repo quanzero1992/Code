@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EnumReportPeriod_April" xml:space="preserve">
+    <value>Tháng 4</value>
+  </data>
+  <data name="EnumReportPeriod_AllYear" xml:space="preserve">
+    <value>Cả năm</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoice.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lblErrorText_InvalidLogin" xml:space="preserve">
+    <value>Sai tên đăng nhập hoặc mật khẩu.</value>
+  </data>
+  <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XtraMessage_Ok" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="EnumReportPeriod_QuarterTwo" xml:space="preserve">
+    <value>Quý II</value>
+  </data>
+  <data name="EnumReportPeriod_Yesterday" xml:space="preserve">
+    <value>Hôm qua</value>
+  </data>
+  <data name="EnumReportPeriod_June" xml:space="preserve">
+    <value>Tháng 6</value>
+  </data>
+  <data name="Exception_SaveFail" xml:space="preserve">
+    <value>Lưu không thành công, dữ liệu không hợp lệ.</value>
+  </data>
+  <data name="EnumReportPeriod_May" xml:space="preserve">
+    <value>Tháng 5</value>
+  </data>
+  <data name="XtraMessage_Yes" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="btnOptionColapseText" xml:space="preserve">
+    <value>&amp;Tùy chọn &gt;&gt;</value>
+  </data>
+  <data name="EnumReportPeriod_September" xml:space="preserve">
+    <value>Tháng 9</value>
+  </data>
+  <data name="EnumReportPeriod_December" xml:space="preserve">
+    <value>Tháng 12</value>
+  </data>
+  <data name="Cancel16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancel16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_QuarterThree" xml:space="preserve">
+    <value>Quý III</value>
+  </data>
+  <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_Option" xml:space="preserve">
+    <value>Tùy chọn</value>
+  </data>
+  <data name="Warning_MustEnterDetail" xml:space="preserve">
+    <value>Bạn chưa nhập dòng chi tiết.</value>
+  </data>
+  <data name="edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1294588249_copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1294588249_copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1295924853_lorry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1295924853_lorry.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_UserNotPermission" xml:space="preserve">
+    <value>Tài khoản &lt;&lt;{0}&gt;&gt; không có quyền đăng nhập.</value>
+  </data>
+  <data name="stopedit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopedit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XtraMessage_Abort" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="Warning_DupplicateCode" xml:space="preserve">
+    <value>&lt;&lt;{0}&gt;&gt; đã tồn tại trong hệ thống.</value>
+  </data>
+  <data name="EnumReportPeriod_Today" xml:space="preserve">
+    <value>Hôm nay</value>
+  </data>
+  <data name="warehousing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warehousing.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XtraMessage_Ignore" xml:space="preserve">
+    <value>Bỏ qua</value>
+  </data>
+  <data name="Title_Supplier" xml:space="preserve">
+    <value>Nhà cung cấp</value>
+  </data>
+  <data name="stopedit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopedit1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_July" xml:space="preserve">
+    <value>Tháng 7</value>
+  </data>
+  <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customers.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumRefType_OutwardVoucher" xml:space="preserve">
+    <value>Hóa đơn bán hàng</value>
+  </data>
+  <data name="Confirm_WannaSaveRecord" xml:space="preserve">
+    <value>Bạn có muốn lưu bản ghi này không?</value>
+  </data>
+  <data name="XtraMessage__Retry" xml:space="preserve">
+    <value>Thử lại</value>
+  </data>
+  <data name="EnumCustomerType_Supplier" xml:space="preserve">
+    <value>Nhà cung cấp</value>
+  </data>
+  <data name="invoice (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invoice (1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshDocViewHS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RefreshDocViewHS.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Warning_AccountingObjectCategory_NotDeleteItemHasChild" xml:space="preserve">
+    <value>Không được xóa nhóm đã có đối tượng con.</value>
+  </data>
+  <data name="XtraMessage_No" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="ConnectionFail" xml:space="preserve">
+    <value>Không kết nối được với máy chủ.</value>
+  </data>
+  <data name="ADD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ADD1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_October" xml:space="preserve">
+    <value>Tháng 10</value>
+  </data>
+  <data name="Config_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="inventory32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="banner1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\banner1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Config_CompanyName" xml:space="preserve">
+    <value>CustomerName</value>
+  </data>
+  <data name="EnumRefType_ReceiptVoucher" xml:space="preserve">
+    <value>Phiếu thu</value>
+  </data>
+  <data name="1284584702_logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1284584702_logout.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumRefType_InwardVourcher" xml:space="preserve">
+    <value>Phiếu nhập kho</value>
+  </data>
+  <data name="EnumReportPeriod_LastMonth" xml:space="preserve">
+    <value>Tháng trước</value>
+  </data>
+  <data name="EnumReportPeriod_January" xml:space="preserve">
+    <value>Tháng 1</value>
+  </data>
+  <data name="EnumReportPeriod_February" xml:space="preserve">
+    <value>Tháng 2</value>
+  </data>
+  <data name="Default_AllString" xml:space="preserve">
+    <value>&lt;&lt;Tất cả&gt;&gt;</value>
+  </data>
+  <data name="EnumReportPeriod_August" xml:space="preserve">
+    <value>Tháng 8</value>
+  </data>
+  <data name="old_go_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\old_go_next.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumCustomerType_All" xml:space="preserve">
+    <value>&lt;&lt;Cả hai&gt;&gt;</value>
+  </data>
+  <data name="EnumReportPeriod_ThisWeek" xml:space="preserve">
+    <value>Tuần này</value>
+  </data>
+  <data name="old_go_previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\old_go_previous.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Confirm_WannaDeleteRecord" xml:space="preserve">
+    <value>Bạn có muốn xóa (các) bản ghi này không?</value>
+  </data>
+  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_March" xml:space="preserve">
+    <value>Tháng 3</value>
+  </data>
+  <data name="emblem_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emblem_money.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConnectSuccess" xml:space="preserve">
+    <value>Kết nối thành công.</value>
+  </data>
+  <data name="Supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Supplier.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_Customer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="Save16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Save16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Report_NotData" xml:space="preserve">
+    <value>Báo cáo không có số liệu.</value>
+  </data>
+  <data name="lblErrorText_UserNameEmpty" xml:space="preserve">
+    <value>Tên đăng nhập không được bỏ trống.</value>
+  </data>
+  <data name="EnumReportPeriod_November" xml:space="preserve">
+    <value>Tháng 11</value>
+  </data>
+  <data name="editmode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editmode.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumCustomerType_Customer" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_AllCustomer" xml:space="preserve">
+    <value>Cả hai</value>
+    <comment>Vừa là khách hàng, vừa là nhà cung cấp</comment>
+  </data>
+  <data name="Warning_NotSelectParent" xml:space="preserve">
+    <value>Không được chọn danh mục cha.</value>
+  </data>
+  <data name="EnumReportPeriod_QuarterFour" xml:space="preserve">
+    <value>Quý IV</value>
+  </data>
+  <data name="EnumReportPeriod_QuarterOne" xml:space="preserve">
+    <value>Quý I</value>
+  </data>
+  <data name="XtraMessage_Cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="EnumReportPeriod_ThisMonth" xml:space="preserve">
+    <value>Tháng này</value>
+  </data>
+  <data name="OutwardInvoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OutwardInvoice.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnumReportPeriod_LastWeek" xml:space="preserve">
+    <value>Tuần trước</value>
+  </data>
+  <data name="EnumRefType_ExpenseVoucher" xml:space="preserve">
+    <value>Phiếu chi</value>
+  </data>
+  <data name="lblErrorText_PasswordEmpty" xml:space="preserve">
+    <value>Mật khẩu không được bỏ trống.</value>
+  </data>
+  <data name="Delete16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnOptionExpanseText" xml:space="preserve">
+    <value>&amp;Tùy chọn &lt;&lt;</value>
+  </data>
+  <data name="Cam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cam.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Do" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Do.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Xanh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xanh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckConnection" xml:space="preserve">
+    <value>Vui lòng kiểm tra kết nối!</value>
+  </data>
+  <data name="EnterFullInfo" xml:space="preserve">
+    <value>Xin mời nhập đầy đủ thông tin!</value>
+  </data>
+  <data name="IncorrectInfoReEnter" xml:space="preserve">
+    <value>Nhập sai thông tin, mời nhập lại!</value>
+  </data>
+  <data name="NewPasswordNotRight" xml:space="preserve">
+    <value>Mật khẩu mới không khớp!</value>
+  </data>
+  <data name="OldPassNotRight" xml:space="preserve">
+    <value>Mật khẩu cũ không đúng!</value>
+  </data>
+  <data name="PasswordFailer" xml:space="preserve">
+    <value>Đổi mật khẩu thất bại!</value>
+  </data>
+  <data name="PasswordRule0" xml:space="preserve">
+    <value>Mật khẩu phải có ít nhất 6 ký tự!</value>
+  </data>
+  <data name="PasswordStrength1" xml:space="preserve">
+    <value>Độ mạnh của mật khẩu: Yếu</value>
+  </data>
+  <data name="PasswordStrength2" xml:space="preserve">
+    <value>Độ mạnh của mật khẩu: Trung Bình</value>
+  </data>
+  <data name="PasswordStrength3" xml:space="preserve">
+    <value>Độ mạnh của mật khẩu: Mạnh</value>
+  </data>
+  <data name="PasswordSuccess" xml:space="preserve">
+    <value>Đổi mật khẩu thành công!</value>
+  </data>
+  <data name="Mess_Logout" xml:space="preserve">
+    <value>Bạn có muốn thoát khỏi phiên làm việc ?</value>
+  </data>
+</root>

@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2EB1880-F7D0-4B10-899C-2858B05CA0E8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eMonitor01</RootNamespace>
+    <AssemblyName>eMonitor01</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>monitoricon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.AXVLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Code\AxInterop.AXVLC.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Win.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Docs.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Reporting.Extensions, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.AXVLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Code\Interop.AXVLC.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net40\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTab.cs" />
+    <Compile Include="cls_Setting.cs" />
+    <Compile Include="CommonDictionary.cs" />
+    <Compile Include="CustomIconTextEdit.cs" />
+    <Compile Include="DateRangeSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateRangeSimple.designer.cs">
+      <DependentUpon>DateRangeSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectDb.cs" />
+    <Compile Include="Enumeration.cs" />
+    <Compile Include="Frm_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ChangePassword.Designer.cs">
+      <DependentUpon>Frm_ChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Config.Designer.cs">
+      <DependentUpon>Frm_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ConfigLane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ConfigLane.Designer.cs">
+      <DependentUpon>Frm_ConfigLane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Etc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Etc.Designer.cs">
+      <DependentUpon>Frm_Etc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LanHonHop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LanHonHop.Designer.cs">
+      <DependentUpon>Frm_LanHonHop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LanMtc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LanMtc.Designer.cs">
+      <DependentUpon>Frm_LanMtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LanMtc_Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LanMtc_Win.Designer.cs">
+      <DependentUpon>Frm_LanMtc_Win.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Detail.Designer.cs">
+      <DependentUpon>Frm_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_SearchAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_SearchAndEdit.Designer.cs">
+      <DependentUpon>Frm_SearchAndEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Setting.Designer.cs">
+      <DependentUpon>Frm_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Waiting.Designer.cs">
+      <DependentUpon>Frm_Waiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageTextEdit2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="MyCache.cs" />
+    <Compile Include="MyGridLocalizer.cs" />
+    <Compile Include="MyXtraMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User_Login.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="Frm_VideoPlaybackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_VideoPlaybackForm.designer.cs">
+      <DependentUpon>Frm_VideoPlaybackForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DateRangeSimple.resx">
+      <DependentUpon>DateRangeSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ChangePassword.resx">
+      <DependentUpon>Frm_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Config.resx">
+      <DependentUpon>Frm_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ConfigLane.resx">
+      <DependentUpon>Frm_ConfigLane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Etc.resx">
+      <DependentUpon>Frm_Etc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LanHonHop.resx">
+      <DependentUpon>Frm_LanHonHop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LanMtc.resx">
+      <DependentUpon>Frm_LanMtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LanMtc_Win.resx">
+      <DependentUpon>Frm_LanMtc_Win.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Detail.resx">
+      <DependentUpon>Frm_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_SearchAndEdit.resx">
+      <DependentUpon>Frm_SearchAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Setting.resx">
+      <DependentUpon>Frm_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Waiting.resx">
+      <DependentUpon>Frm_Waiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Frm_VideoPlaybackForm.resx">
+      <DependentUpon>Frm_VideoPlaybackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="log4netDatabase.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="tollcollectionDataSet.xsc">
+      <DependentUpon>tollcollectionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tollcollectionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tollcollectionDataSet.xss">
+      <DependentUpon>tollcollectionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tollcollectionDataSet1.xsc">
+      <DependentUpon>tollcollectionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="tollcollectionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tollcollectionDataSet1.xss">
+      <DependentUpon>tollcollectionDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1403181077_32583.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera-quan-sat-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toancanh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khunghinh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Camera.ico" />
+    <Content Include="monitor.ico" />
+    <Content Include="monitoricon.ico" />
+    <None Include="Resources\media_seek_forward.png" />
+    <None Include="Resources\media_seek_backward.png" />
+    <None Include="Resources\media_playback_start.png" />
+    <None Include="Resources\media_playback_pause.png" />
+    <None Include="Resources\ImageEmpty.png" />
+    <None Include="Resources\banner.jpg" />
+    <None Include="Resources\Xanh.jpg" />
+    <None Include="Resources\Do.jpg" />
+    <None Include="Resources\Cam.jpg" />
+    <None Include="Resources\up4.png" />
+    <None Include="Resources\down4.png" />
+    <None Include="Resources\Next2.png" />
+    <None Include="Resources\Previous.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\previous2.png" />
+    <None Include="Resources\error1.gif" />
+    <None Include="Resources\error.gif" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\loi.png" />
+    <None Include="Resources\OK-button-icon.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eReview01.BL\eReview01.BL.csproj">
+      <Project>{ef2c206e-d1f8-4be9-9e0b-94852bb895d1}</Project>
+      <Name>eReview01.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eReview01.CommonUI\eReview01.CommonUI.csproj">
+      <Project>{1893d42e-e70b-4c28-9a12-de68f073b8cb}</Project>
+      <Name>eReview01.CommonUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eReview01.DL\eReview01.DL.csproj">
+      <Project>{a2482fdd-7701-4605-8de2-4e7377e29473}</Project>
+      <Name>eReview01.DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eReview01.Entities\eReview01.Entities.csproj">
+      <Project>{304de028-8f59-44ba-94d1-69b12855130c}</Project>
+      <Name>eReview01.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\log4netDatabase\log4netDatabase.csproj">
+      <Project>{6c2a54e8-6f25-4a07-963d-27933a261189}</Project>
+      <Name>log4netDatabase</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
