@@ -17,6 +17,8 @@ using System.IO;
 using eReview01.CommonUI;
 using log4netDatabase;
 using System.Linq;
+using System.Drawing.Imaging;
+using DevExpress.Utils;
 
 namespace eMonitor01
 {
@@ -30,8 +32,10 @@ namespace eMonitor01
             InitializeComponent();
             //t.Abort();
             Cursor.Current = Cursors.Default;
+            pic_ImgBs.MouseWheel += pic_ImgBs_MouseWheel;
         }
-        
+
+      
         ConnectDb con = new ConnectDb();
         DataTable dt ;
         int LocLoi = 101;
@@ -859,6 +863,115 @@ namespace eMonitor01
         {
 
         }
+
+        private void lưuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap currentImage = (Bitmap)pic_BsDetail.EditValue;
+            Bitmap saveImage = new Bitmap(currentImage, pic_BsDetail.ClientSize.Width, pic_BsDetail.ClientSize.Height);
+            try
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+                ImageFormat format = ImageFormat.Png;
+                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string ext = System.IO.Path.GetExtension(sfd.FileName);
+                    switch (ext)
+                    {
+                        case ".jpg":
+                            format = ImageFormat.Jpeg;
+                            break;
+                        case ".bmp":
+                            format = ImageFormat.Bmp;
+                            break;
+                    }
+                    saveImage.Save(sfd.FileName, format);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+            finally
+            {
+                currentImage.Dispose();
+                saveImage.Dispose();
+            }
+        }
+
+        private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
+            PrintDialog myPrinDialog2 = new PrintDialog();
+            myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
+            myPrinDialog2.Document = myPrintDocument2;
+
+            if (myPrinDialog2.ShowDialog() == DialogResult.OK)
+            {
+                myPrintDocument2.Print();
+            }
+        }
+
+        private void myPrintDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            using (Bitmap myBitmap2 = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                           Screen.PrimaryScreen.WorkingArea.Height,
+                           PixelFormat.Format32bppArgb))
+            {
+                this.DrawToBitmap(myBitmap2, new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height));
+                e.Graphics.DrawImage(myBitmap2, 0, 0);
+                myBitmap2.Save("ScreenShoot.png",ImageFormat.Png);
+            }
+        }
+
+        private void inToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Drawing.Printing.PrintDocument myPrintDocument1 = new System.Drawing.Printing.PrintDocument();
+            PrintDialog myPrinDialog1 = new PrintDialog();
+            myPrintDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument2_PrintPage);
+            myPrinDialog1.Document = myPrintDocument1;
+
+            if (myPrinDialog1.ShowDialog() == DialogResult.OK)
+            {
+                myPrintDocument1.Print();
+            }
+        }
+
+        private void myPrintDocument2_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap currentImage = (Bitmap)pic_BsDetail.EditValue;
+            using (Bitmap saveImage = new Bitmap(currentImage, pic_BsDetail.ClientSize.Width, pic_BsDetail.ClientSize.Height))
+            {
+                saveImage.Save("Image.png",ImageFormat.Png);
+                e.Graphics.DrawImage(saveImage, 0, 0);
+            }
+            currentImage.Dispose();
+        }
+
+        float zoomSpeedFactor = 0.1f;
+        private void pic_ImgBs_Properties_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0 && pic_ImgBs.Properties.ZoomPercent < 500)
+            {
+                pic_ImgBs.Properties.ZoomPercent += 50;
+                pic_BsDetail.Properties.ZoomPercent += 50;
+                DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+            }
+            else if (e.Delta < 0 && pic_ImgBs.Properties.ZoomPercent >= 150)
+            {
+                pic_ImgBs.Properties.ZoomPercent -= 50;
+                pic_BsDetail.Properties.ZoomPercent -= 50;
+                DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+            }
+            else
+                return;
+        }
+
+        private void pic_ImgBs_MouseWheel(object sender, MouseEventArgs e)
+        {
+            
+        }
+        
     }
 
     public class MyFindControl : FindControl

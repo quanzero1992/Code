@@ -29,6 +29,11 @@ namespace eMonitor01
                     oBL.GetAllData();
                     oBL.TableMasterName = DataSource.cf_lane.TableName;
                     oBL.GetAllData();
+                    oBL.TableMasterName = DataSource.user_info.TableName;
+                    oBL.GetAllData();
+                    oBL.TableMasterName = DataSource.ticket_type.TableName;
+                    oBL.GetAllData();
+
                 }
                 
             }

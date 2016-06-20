@@ -64,6 +64,11 @@
             this.btn_previous = new System.Windows.Forms.Button();
             this.btn_run = new DevExpress.XtraEditors.SimpleButton();
             this.Pic_Mtc = new DevExpress.XtraEditors.PictureEdit();
+            this.mc_Image = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inMànHìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_grid = new DevExpress.XtraEditors.PanelControl();
             this.Data_soatveMTC = new DevExpress.XtraGrid.GridControl();
             this.grid_Mtc = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -83,18 +88,17 @@
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemCheckedComboBoxEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
             this.repositoryItemImageComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.repositoryItemImageTextEdit1 = new ImageTextEdit2.RepositoryItemImageTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.lbl_LoaiVe = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_GoiYLoi = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_CaptionGoiYLoi = new DevExpress.XtraEditors.LabelControl();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.lbl_link = new DevExpress.XtraEditors.LabelControl();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.grp_SettingFillData = new DevExpress.XtraEditors.GroupControl();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Loi0 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Loi1 = new DevExpress.XtraEditors.SimpleButton();
@@ -103,17 +107,33 @@
             this.btn_Loi4 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Loi5 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Loi6 = new DevExpress.XtraEditors.SimpleButton();
-            this.lbl_biensoxe = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_LoaiThuPhi = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_giatien = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblStandard_UpdatePerson = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.lblStandard_UpdateDate = new DevExpress.XtraEditors.LabelControl();
+            this.lblStandard_VehNum = new DevExpress.XtraEditors.LabelControl();
+            this.lblStandard_VehType = new DevExpress.XtraEditors.LabelControl();
+            this.lblStandard_Price = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.lblWarmning = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_loaixe = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_LoaiVe = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.grp_SettingFillData = new DevExpress.XtraEditors.GroupControl();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_giatien = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_biensoxe = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_LoaiThuPhi = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbl_GoiYLoi = new DevExpress.XtraEditors.LabelControl();
             this.timer_autoloaddt = new System.Windows.Forms.Timer(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timer_loaddb = new System.Windows.Forms.Timer(this.components);
@@ -127,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Mtc.Properties)).BeginInit();
+            this.mc_Image.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_grid)).BeginInit();
             this.panel_grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Data_soatveMTC)).BeginInit();
@@ -139,12 +160,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grp_SettingFillData)).BeginInit();
             this.grp_SettingFillData.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -157,7 +184,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1276, 729);
+            this.panelControl2.Size = new System.Drawing.Size(1362, 729);
             this.panelControl2.TabIndex = 3;
             // 
             // groupControl1
@@ -172,7 +199,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(814, 729);
+            this.groupControl1.Size = new System.Drawing.Size(896, 729);
             this.groupControl1.TabIndex = 2;
             // 
             // btnVideoPlayback
@@ -190,7 +217,7 @@
             // 
             this.btn_resize_image.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_resize_image.Image = global::eMonitor01.Properties.Resources.down4;
-            this.btn_resize_image.Location = new System.Drawing.Point(786, 2);
+            this.btn_resize_image.Location = new System.Drawing.Point(868, 2);
             this.btn_resize_image.Name = "btn_resize_image";
             this.btn_resize_image.Size = new System.Drawing.Size(26, 24);
             this.btn_resize_image.TabIndex = 5;
@@ -207,7 +234,7 @@
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl4.Location = new System.Drawing.Point(2, 27);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(810, 461);
+            this.panelControl4.Size = new System.Drawing.Size(892, 461);
             this.panelControl4.TabIndex = 1;
             // 
             // btn_next
@@ -220,7 +247,7 @@
             this.btn_next.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_next.Image = global::eMonitor01.Properties.Resources.Next;
-            this.btn_next.Location = new System.Drawing.Point(750, 179);
+            this.btn_next.Location = new System.Drawing.Point(832, 179);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(56, 111);
             this.btn_next.TabIndex = 98;
@@ -262,7 +289,7 @@
             this.btn_run.Appearance.Options.UseFont = true;
             this.btn_run.Image = global::eMonitor01.Properties.Resources.play;
             this.btn_run.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btn_run.Location = new System.Drawing.Point(352, 10);
+            this.btn_run.Location = new System.Drawing.Point(393, 10);
             this.btn_run.Name = "btn_run";
             this.btn_run.Size = new System.Drawing.Size(97, 32);
             toolTipTitleItem1.Text = "Chạy Slideshow (CTRL+S)";
@@ -280,12 +307,54 @@
             this.Pic_Mtc.Name = "Pic_Mtc";
             this.Pic_Mtc.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.LightBlue;
             this.Pic_Mtc.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.Pic_Mtc.Properties.ContextMenuStrip = this.mc_Image;
             this.Pic_Mtc.Properties.ErrorImage = null;
             this.Pic_Mtc.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.Pic_Mtc.Size = new System.Drawing.Size(810, 461);
+            this.Pic_Mtc.Properties.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.Pic_Mtc_Properties_MouseWheel);
+            this.Pic_Mtc.Size = new System.Drawing.Size(892, 461);
             this.Pic_Mtc.TabIndex = 95;
             this.Pic_Mtc.MouseLeave += new System.EventHandler(this.Pic_Mtc_MouseLeave);
             this.Pic_Mtc.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Pic_Mtc_MouseMove);
+            // 
+            // mc_Image
+            // 
+            this.mc_Image.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lưuToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.inToolStripMenuItem,
+            this.inMànHìnhToolStripMenuItem});
+            this.mc_Image.Name = "mc_Image";
+            this.mc_Image.Size = new System.Drawing.Size(139, 76);
+            this.mc_Image.Opening += new System.ComponentModel.CancelEventHandler(this.mc_Image_Opening);
+            // 
+            // lưuToolStripMenuItem
+            // 
+            this.lưuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuToolStripMenuItem.Image")));
+            this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.lưuToolStripMenuItem.Text = "Lưu";
+            this.lưuToolStripMenuItem.Click += new System.EventHandler(this.lưuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            // 
+            // inToolStripMenuItem
+            // 
+            this.inToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inToolStripMenuItem.Image")));
+            this.inToolStripMenuItem.Name = "inToolStripMenuItem";
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inToolStripMenuItem.Text = "In ảnh";
+            this.inToolStripMenuItem.Click += new System.EventHandler(this.inToolStripMenuItem_Click);
+            // 
+            // inMànHìnhToolStripMenuItem
+            // 
+            this.inMànHìnhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inMànHìnhToolStripMenuItem.Image")));
+            this.inMànHìnhToolStripMenuItem.Name = "inMànHìnhToolStripMenuItem";
+            this.inMànHìnhToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inMànHìnhToolStripMenuItem.Text = "In màn hình";
+            this.inMànHìnhToolStripMenuItem.Click += new System.EventHandler(this.inMànHìnhToolStripMenuItem_Click);
             // 
             // panel_grid
             // 
@@ -294,7 +363,7 @@
             this.panel_grid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_grid.Location = new System.Drawing.Point(2, 488);
             this.panel_grid.Name = "panel_grid";
-            this.panel_grid.Size = new System.Drawing.Size(810, 239);
+            this.panel_grid.Size = new System.Drawing.Size(892, 239);
             this.panel_grid.TabIndex = 0;
             // 
             // Data_soatveMTC
@@ -323,7 +392,7 @@
             this.repositoryItemImageComboBox1,
             this.repositoryItemImageComboBox2,
             this.repositoryItemImageTextEdit1});
-            this.Data_soatveMTC.Size = new System.Drawing.Size(810, 239);
+            this.Data_soatveMTC.Size = new System.Drawing.Size(892, 239);
             this.Data_soatveMTC.TabIndex = 1;
             this.Data_soatveMTC.UseEmbeddedNavigator = true;
             this.Data_soatveMTC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -355,7 +424,8 @@
             this.gridColumn4,
             this.gridColumn9,
             this.gridColumn12,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn7});
             this.grid_Mtc.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.grid_Mtc.GridControl = this.Data_soatveMTC;
             this.grid_Mtc.IndicatorWidth = 30;
@@ -564,6 +634,12 @@
             this.gridColumn2.FieldName = "ThoiDiemXeVao";
             this.gridColumn2.Name = "gridColumn2";
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Lượt/Tháng/Quý";
+            this.gridColumn7.FieldName = "LuotThangQuy";
+            this.gridColumn7.Name = "gridColumn7";
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -593,108 +669,90 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.groupControl4);
-            this.panelControl1.Controls.Add(this.grp_SettingFillData);
+            this.panelControl1.Controls.Add(this.tableLayoutPanel1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl1.Location = new System.Drawing.Point(814, 0);
+            this.panelControl1.Location = new System.Drawing.Point(896, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(462, 729);
+            this.panelControl1.Size = new System.Drawing.Size(466, 729);
             this.panelControl1.TabIndex = 1;
             // 
-            // groupControl4
+            // tableLayoutPanel1
             // 
-            this.groupControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.groupControl4.Appearance.Options.UseFont = true;
-            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.groupControl4.AppearanceCaption.Options.UseFont = true;
-            this.groupControl4.Controls.Add(this.lbl_LoaiVe);
-            this.groupControl4.Controls.Add(this.labelControl6);
-            this.groupControl4.Controls.Add(this.lbl_GoiYLoi);
-            this.groupControl4.Controls.Add(this.lbl_CaptionGoiYLoi);
-            this.groupControl4.Controls.Add(this.listBox1);
-            this.groupControl4.Controls.Add(this.lbl_link);
-            this.groupControl4.Controls.Add(this.panelControl3);
-            this.groupControl4.Controls.Add(this.lbl_biensoxe);
-            this.groupControl4.Controls.Add(this.lbl_LoaiThuPhi);
-            this.groupControl4.Controls.Add(this.lbl_giatien);
-            this.groupControl4.Controls.Add(this.lbl_loaixe);
-            this.groupControl4.Controls.Add(this.labelControl4);
-            this.groupControl4.Controls.Add(this.labelControl3);
-            this.groupControl4.Controls.Add(this.labelControl2);
-            this.groupControl4.Controls.Add(this.labelControl1);
-            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(2, 76);
-            this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(458, 651);
-            this.groupControl4.TabIndex = 119;
-            this.groupControl4.Text = "Chi tiết soát vé";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.grp_SettingFillData, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelControl3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.793103F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.68966F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.06897F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.72414F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(462, 725);
+            this.tableLayoutPanel1.TabIndex = 122;
             // 
-            // lbl_LoaiVe
+            // grp_SettingFillData
             // 
-            this.lbl_LoaiVe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoaiVe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_LoaiVe.Location = new System.Drawing.Point(83, 115);
-            this.lbl_LoaiVe.Name = "lbl_LoaiVe";
-            this.lbl_LoaiVe.Size = new System.Drawing.Size(359, 19);
-            this.lbl_LoaiVe.TabIndex = 114;
+            this.grp_SettingFillData.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.grp_SettingFillData.Appearance.Options.UseFont = true;
+            this.grp_SettingFillData.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.grp_SettingFillData.AppearanceCaption.Options.UseFont = true;
+            this.grp_SettingFillData.Controls.Add(this.tableLayoutPanel2);
+            this.grp_SettingFillData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grp_SettingFillData.Location = new System.Drawing.Point(3, 3);
+            this.grp_SettingFillData.Name = "grp_SettingFillData";
+            this.grp_SettingFillData.Size = new System.Drawing.Size(456, 64);
+            this.grp_SettingFillData.TabIndex = 119;
+            this.grp_SettingFillData.Text = "Thiết lập tải dữ liệu";
             // 
-            // labelControl6
+            // tableLayoutPanel2
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl6.Location = new System.Drawing.Point(13, 116);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(83, 20);
-            this.labelControl6.TabIndex = 113;
-            this.labelControl6.Text = "Loại vé:";
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.radioButton2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.radioButton1, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 27);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(452, 35);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // lbl_GoiYLoi
+            // radioButton2
             // 
-            this.lbl_GoiYLoi.AllowHtmlString = true;
-            this.lbl_GoiYLoi.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lbl_GoiYLoi.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.lbl_GoiYLoi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lbl_GoiYLoi.Location = new System.Drawing.Point(83, 265);
-            this.lbl_GoiYLoi.Name = "lbl_GoiYLoi";
-            this.lbl_GoiYLoi.Size = new System.Drawing.Size(359, 0);
-            this.lbl_GoiYLoi.TabIndex = 112;
-            this.lbl_GoiYLoi.Visible = false;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.radioButton2.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.radioButton2.Location = new System.Drawing.Point(229, 3);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(135, 29);
+            this.radioButton2.TabIndex = 127;
+            this.radioButton2.Text = "Dữ liệu hiện tại";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // lbl_CaptionGoiYLoi
+            // radioButton1
             // 
-            this.lbl_CaptionGoiYLoi.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CaptionGoiYLoi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_CaptionGoiYLoi.Location = new System.Drawing.Point(27, 265);
-            this.lbl_CaptionGoiYLoi.Name = "lbl_CaptionGoiYLoi";
-            this.lbl_CaptionGoiYLoi.Size = new System.Drawing.Size(47, 17);
-            this.lbl_CaptionGoiYLoi.TabIndex = 109;
-            this.lbl_CaptionGoiYLoi.Text = "(Gợi ý: ";
-            this.lbl_CaptionGoiYLoi.Visible = false;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(3, 286);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(444, 100);
-            this.listBox1.TabIndex = 108;
-            this.listBox1.Visible = false;
-            // 
-            // lbl_link
-            // 
-            this.lbl_link.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.lbl_link.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lbl_link.Location = new System.Drawing.Point(5, 334);
-            this.lbl_link.Name = "lbl_link";
-            this.lbl_link.Size = new System.Drawing.Size(336, 19);
-            this.lbl_link.TabIndex = 105;
-            this.lbl_link.Text = "Link";
-            this.lbl_link.Visible = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.radioButton1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.radioButton1.Location = new System.Drawing.Point(74, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(149, 29);
+            this.radioButton1.TabIndex = 126;
+            this.radioButton1.Text = "Dữ liệu cũ          ";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
             // panelControl3
             // 
-            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl3.Controls.Add(this.btn_Loi0);
             this.panelControl3.Controls.Add(this.btn_Loi1);
@@ -703,10 +761,11 @@
             this.panelControl3.Controls.Add(this.btn_Loi4);
             this.panelControl3.Controls.Add(this.btn_Loi5);
             this.panelControl3.Controls.Add(this.btn_Loi6);
-            this.panelControl3.Location = new System.Drawing.Point(2, 568);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(3, 642);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(454, 80);
-            this.panelControl3.TabIndex = 104;
+            this.panelControl3.Size = new System.Drawing.Size(456, 80);
+            this.panelControl3.TabIndex = 121;
             // 
             // btn_Loi0
             // 
@@ -715,7 +774,7 @@
             this.btn_Loi0.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi0.Image = ((System.Drawing.Image)(resources.GetObject("btn_Loi0.Image")));
             this.btn_Loi0.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi0.Location = new System.Drawing.Point(0, 0);
+            this.btn_Loi0.Location = new System.Drawing.Point(2, 0);
             this.btn_Loi0.Name = "btn_Loi0";
             this.btn_Loi0.Size = new System.Drawing.Size(64, 80);
             toolTipTitleItem2.Appearance.Image = global::eMonitor01.Properties.Resources.OK_button_icon;
@@ -738,7 +797,7 @@
             this.btn_Loi1.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi1.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi1.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi1.Location = new System.Drawing.Point(64, 0);
+            this.btn_Loi1.Location = new System.Drawing.Point(66, 0);
             this.btn_Loi1.Name = "btn_Loi1";
             this.btn_Loi1.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem3.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -761,7 +820,7 @@
             this.btn_Loi2.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi2.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi2.Location = new System.Drawing.Point(129, 0);
+            this.btn_Loi2.Location = new System.Drawing.Point(131, 0);
             this.btn_Loi2.Name = "btn_Loi2";
             this.btn_Loi2.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem4.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -785,7 +844,7 @@
             this.btn_Loi3.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi3.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi3.Location = new System.Drawing.Point(194, 0);
+            this.btn_Loi3.Location = new System.Drawing.Point(196, 0);
             this.btn_Loi3.Name = "btn_Loi3";
             this.btn_Loi3.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem5.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -808,7 +867,7 @@
             this.btn_Loi4.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi4.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi4.Location = new System.Drawing.Point(259, 0);
+            this.btn_Loi4.Location = new System.Drawing.Point(261, 0);
             this.btn_Loi4.Name = "btn_Loi4";
             this.btn_Loi4.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem6.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -831,7 +890,7 @@
             this.btn_Loi5.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi5.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi5.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi5.Location = new System.Drawing.Point(324, 0);
+            this.btn_Loi5.Location = new System.Drawing.Point(326, 0);
             this.btn_Loi5.Name = "btn_Loi5";
             this.btn_Loi5.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem7.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -854,7 +913,7 @@
             this.btn_Loi6.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_Loi6.Image = global::eMonitor01.Properties.Resources.loi;
             this.btn_Loi6.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Loi6.Location = new System.Drawing.Point(389, 0);
+            this.btn_Loi6.Location = new System.Drawing.Point(391, 0);
             this.btn_Loi6.Name = "btn_Loi6";
             this.btn_Loi6.Size = new System.Drawing.Size(65, 80);
             toolTipTitleItem8.Appearance.Image = global::eMonitor01.Properties.Resources.loi;
@@ -870,126 +929,349 @@
             this.btn_Loi6.Text = "Lỗi loại 6";
             this.btn_Loi6.Click += new System.EventHandler(this.btn_Loi6_Click);
             // 
-            // lbl_biensoxe
+            // groupControl2
             // 
-            this.lbl_biensoxe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_biensoxe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_biensoxe.Location = new System.Drawing.Point(83, 44);
-            this.lbl_biensoxe.Name = "lbl_biensoxe";
-            this.lbl_biensoxe.Size = new System.Drawing.Size(359, 20);
-            this.lbl_biensoxe.TabIndex = 96;
-            this.lbl_biensoxe.Text = "Biển số xe";
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.tableLayoutPanel4);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 367);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Padding = new System.Windows.Forms.Padding(1);
+            this.groupControl2.Size = new System.Drawing.Size(456, 269);
+            this.groupControl2.TabIndex = 121;
+            this.groupControl2.Text = "Thông tin xe chuẩn";
             // 
-            // lbl_LoaiThuPhi
+            // tableLayoutPanel4
             // 
-            this.lbl_LoaiThuPhi.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LoaiThuPhi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_LoaiThuPhi.Location = new System.Drawing.Point(83, 80);
-            this.lbl_LoaiThuPhi.Name = "lbl_LoaiThuPhi";
-            this.lbl_LoaiThuPhi.Size = new System.Drawing.Size(359, 19);
-            this.lbl_LoaiThuPhi.TabIndex = 95;
-            this.lbl_LoaiThuPhi.Text = "Loại thu phí";
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.11111F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.88889F));
+            this.tableLayoutPanel4.Controls.Add(this.lblStandard_UpdatePerson, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.labelControl13, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblStandard_UpdateDate, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblStandard_VehNum, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblStandard_VehType, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblStandard_Price, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.labelControl7, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.labelControl10, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.labelControl12, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.labelControl8, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblWarmning, 0, 6);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 28);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 8;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(450, 238);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // lblStandard_UpdatePerson
+            // 
+            this.lblStandard_UpdatePerson.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard_UpdatePerson.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblStandard_UpdatePerson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStandard_UpdatePerson.Location = new System.Drawing.Point(124, 154);
+            this.lblStandard_UpdatePerson.Name = "lblStandard_UpdatePerson";
+            this.lblStandard_UpdatePerson.Size = new System.Drawing.Size(323, 0);
+            this.lblStandard_UpdatePerson.TabIndex = 136;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl13.Location = new System.Drawing.Point(3, 14);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(115, 19);
+            this.labelControl13.TabIndex = 126;
+            this.labelControl13.Text = "Biển số:";
+            // 
+            // lblStandard_UpdateDate
+            // 
+            this.lblStandard_UpdateDate.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard_UpdateDate.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblStandard_UpdateDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStandard_UpdateDate.Location = new System.Drawing.Point(124, 119);
+            this.lblStandard_UpdateDate.Name = "lblStandard_UpdateDate";
+            this.lblStandard_UpdateDate.Size = new System.Drawing.Size(323, 0);
+            this.lblStandard_UpdateDate.TabIndex = 133;
+            // 
+            // lblStandard_VehNum
+            // 
+            this.lblStandard_VehNum.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard_VehNum.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblStandard_VehNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStandard_VehNum.Location = new System.Drawing.Point(124, 14);
+            this.lblStandard_VehNum.Name = "lblStandard_VehNum";
+            this.lblStandard_VehNum.Size = new System.Drawing.Size(323, 0);
+            this.lblStandard_VehNum.TabIndex = 129;
+            // 
+            // lblStandard_VehType
+            // 
+            this.lblStandard_VehType.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard_VehType.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblStandard_VehType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStandard_VehType.Location = new System.Drawing.Point(124, 49);
+            this.lblStandard_VehType.Name = "lblStandard_VehType";
+            this.lblStandard_VehType.Size = new System.Drawing.Size(323, 0);
+            this.lblStandard_VehType.TabIndex = 128;
+            // 
+            // lblStandard_Price
+            // 
+            this.lblStandard_Price.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStandard_Price.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lblStandard_Price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStandard_Price.Location = new System.Drawing.Point(124, 84);
+            this.lblStandard_Price.Name = "lblStandard_Price";
+            this.lblStandard_Price.Size = new System.Drawing.Size(323, 0);
+            this.lblStandard_Price.TabIndex = 132;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl7.Location = new System.Drawing.Point(3, 119);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(115, 19);
+            this.labelControl7.TabIndex = 131;
+            this.labelControl7.Text = "Ngày cập nhật:";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl10.Location = new System.Drawing.Point(3, 84);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(115, 19);
+            this.labelControl10.TabIndex = 130;
+            this.labelControl10.Text = "Giá tiền:";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl12.Location = new System.Drawing.Point(3, 49);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(115, 19);
+            this.labelControl12.TabIndex = 127;
+            this.labelControl12.Text = "Loại xe:";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl8.Location = new System.Drawing.Point(3, 154);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(115, 19);
+            this.labelControl8.TabIndex = 135;
+            this.labelControl8.Text = "Người cập nhật:";
+            // 
+            // lblWarmning
+            // 
+            this.lblWarmning.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarmning.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.tableLayoutPanel4.SetColumnSpan(this.lblWarmning, 2);
+            this.lblWarmning.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWarmning.Location = new System.Drawing.Point(3, 189);
+            this.lblWarmning.Name = "lblWarmning";
+            this.lblWarmning.Size = new System.Drawing.Size(444, 29);
+            this.lblWarmning.TabIndex = 134;
+            this.lblWarmning.Text = "warming";
+            this.lblWarmning.Visible = false;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.groupControl4.Appearance.Options.UseFont = true;
+            this.groupControl4.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.groupControl4.AppearanceCaption.Options.UseFont = true;
+            this.groupControl4.Controls.Add(this.tableLayoutPanel3);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(3, 73);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(456, 288);
+            this.groupControl4.TabIndex = 119;
+            this.groupControl4.Text = "Chi tiết soát vé";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.37168F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.62832F));
+            this.tableLayoutPanel3.Controls.Add(this.lbl_loaixe, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_LoaiVe, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.labelControl1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelControl6, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_giatien, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.labelControl4, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_biensoxe, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.labelControl3, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_LoaiThuPhi, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.labelControl2, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.listBox1, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.lbl_GoiYLoi, 0, 6);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 27);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(452, 259);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // lbl_loaixe
+            // 
+            this.lbl_loaixe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_loaixe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lbl_loaixe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_loaixe.Location = new System.Drawing.Point(76, 147);
+            this.lbl_loaixe.Name = "lbl_loaixe";
+            this.lbl_loaixe.Size = new System.Drawing.Size(373, 19);
+            this.lbl_loaixe.TabIndex = 126;
+            this.lbl_loaixe.Text = "Loại xe";
+            // 
+            // lbl_LoaiVe
+            // 
+            this.lbl_LoaiVe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LoaiVe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lbl_LoaiVe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_LoaiVe.Location = new System.Drawing.Point(76, 81);
+            this.lbl_LoaiVe.Name = "lbl_LoaiVe";
+            this.lbl_LoaiVe.Size = new System.Drawing.Size(373, 0);
+            this.lbl_LoaiVe.TabIndex = 127;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl1.Location = new System.Drawing.Point(3, 15);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(67, 19);
+            this.labelControl1.TabIndex = 115;
+            this.labelControl1.Text = "Biển số:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl6.Location = new System.Drawing.Point(3, 81);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(67, 19);
+            this.labelControl6.TabIndex = 126;
+            this.labelControl6.Text = "Loại vé:";
             // 
             // lbl_giatien
             // 
             this.lbl_giatien.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_giatien.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_giatien.Location = new System.Drawing.Point(83, 150);
+            this.lbl_giatien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_giatien.Location = new System.Drawing.Point(76, 114);
             this.lbl_giatien.Name = "lbl_giatien";
-            this.lbl_giatien.Size = new System.Drawing.Size(359, 24);
-            this.lbl_giatien.TabIndex = 94;
+            this.lbl_giatien.Size = new System.Drawing.Size(373, 27);
+            this.lbl_giatien.TabIndex = 120;
             this.lbl_giatien.Text = "Giá tiền";
-            // 
-            // lbl_loaixe
-            // 
-            this.lbl_loaixe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_loaixe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_loaixe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lbl_loaixe.Location = new System.Drawing.Point(83, 188);
-            this.lbl_loaixe.Name = "lbl_loaixe";
-            this.lbl_loaixe.Size = new System.Drawing.Size(365, 19);
-            this.lbl_loaixe.TabIndex = 93;
-            this.lbl_loaixe.Text = "Loại xe";
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl4.Location = new System.Drawing.Point(13, 188);
+            this.labelControl4.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl4.Location = new System.Drawing.Point(3, 147);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(64, 20);
-            this.labelControl4.TabIndex = 92;
-            this.labelControl4.Text = "Loại xe:";
+            this.labelControl4.Size = new System.Drawing.Size(67, 19);
+            this.labelControl4.TabIndex = 118;
+            this.labelControl4.Text = "Mô tả xe:";
+            // 
+            // lbl_biensoxe
+            // 
+            this.lbl_biensoxe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_biensoxe.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lbl_biensoxe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_biensoxe.Location = new System.Drawing.Point(76, 15);
+            this.lbl_biensoxe.Name = "lbl_biensoxe";
+            this.lbl_biensoxe.Size = new System.Drawing.Size(373, 19);
+            this.lbl_biensoxe.TabIndex = 122;
+            this.lbl_biensoxe.Text = "Biển số xe";
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Location = new System.Drawing.Point(13, 80);
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl3.Location = new System.Drawing.Point(3, 48);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(83, 20);
-            this.labelControl3.TabIndex = 91;
+            this.labelControl3.Size = new System.Drawing.Size(67, 19);
+            this.labelControl3.TabIndex = 117;
             this.labelControl3.Text = "Thu phí:";
+            // 
+            // lbl_LoaiThuPhi
+            // 
+            this.lbl_LoaiThuPhi.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_LoaiThuPhi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.lbl_LoaiThuPhi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_LoaiThuPhi.Location = new System.Drawing.Point(76, 48);
+            this.lbl_LoaiThuPhi.Name = "lbl_LoaiThuPhi";
+            this.lbl_LoaiThuPhi.Size = new System.Drawing.Size(373, 19);
+            this.lbl_LoaiThuPhi.TabIndex = 121;
+            this.lbl_LoaiThuPhi.Text = "Loại thu phí";
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(13, 152);
+            this.labelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelControl2.Location = new System.Drawing.Point(3, 114);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(67, 20);
-            this.labelControl2.TabIndex = 90;
+            this.labelControl2.Size = new System.Drawing.Size(67, 27);
+            this.labelControl2.TabIndex = 116;
             this.labelControl2.Text = "Giá tiền:";
             // 
-            // labelControl1
+            // listBox1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(13, 44);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(83, 20);
-            this.labelControl1.TabIndex = 89;
-            this.labelControl1.Text = "Biển số:";
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 244);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(67, 12);
+            this.listBox1.TabIndex = 123;
+            this.listBox1.Visible = false;
             // 
-            // grp_SettingFillData
+            // lbl_GoiYLoi
             // 
-            this.grp_SettingFillData.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.grp_SettingFillData.Appearance.Options.UseFont = true;
-            this.grp_SettingFillData.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.grp_SettingFillData.AppearanceCaption.Options.UseFont = true;
-            this.grp_SettingFillData.Controls.Add(this.radioButton2);
-            this.grp_SettingFillData.Controls.Add(this.radioButton1);
-            this.grp_SettingFillData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.grp_SettingFillData.Location = new System.Drawing.Point(2, 2);
-            this.grp_SettingFillData.Name = "grp_SettingFillData";
-            this.grp_SettingFillData.Size = new System.Drawing.Size(458, 74);
-            this.grp_SettingFillData.TabIndex = 118;
-            this.grp_SettingFillData.Text = "Thiết lập tải dữ liệu";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(265, 36);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(135, 23);
-            this.radioButton2.TabIndex = 125;
-            this.radioButton2.Text = "Dữ liệu hiện tại";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.radioButton1.Location = new System.Drawing.Point(65, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(99, 23);
-            this.radioButton1.TabIndex = 124;
-            this.radioButton1.Text = "Dữ liệu cũ";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            this.lbl_GoiYLoi.AllowHtmlString = true;
+            this.lbl_GoiYLoi.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lbl_GoiYLoi.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lbl_GoiYLoi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.tableLayoutPanel3.SetColumnSpan(this.lbl_GoiYLoi, 2);
+            this.lbl_GoiYLoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_GoiYLoi.Location = new System.Drawing.Point(3, 211);
+            this.lbl_GoiYLoi.Name = "lbl_GoiYLoi";
+            this.lbl_GoiYLoi.Size = new System.Drawing.Size(446, 16);
+            this.lbl_GoiYLoi.TabIndex = 125;
+            this.lbl_GoiYLoi.Text = "Warming";
+            this.lbl_GoiYLoi.Visible = false;
             // 
             // timer_autoloaddt
             // 
@@ -1026,7 +1308,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 729);
+            this.ClientSize = new System.Drawing.Size(1362, 729);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panelControl2);
             this.Name = "Frm_LanMtc";
@@ -1041,6 +1323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Mtc.Properties)).EndInit();
+            this.mc_Image.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panel_grid)).EndInit();
             this.panel_grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Data_soatveMTC)).EndInit();
@@ -1053,13 +1336,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grp_SettingFillData)).EndInit();
             this.grp_SettingFillData.ResumeLayout(false);
-            this.grp_SettingFillData.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1075,34 +1364,9 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Timer timer_loaddb;
-        private DevExpress.XtraEditors.GroupControl grp_SettingFillData;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi0;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi1;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi2;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi3;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi4;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi5;
-        private DevExpress.XtraEditors.SimpleButton btn_Loi6;
-        private DevExpress.XtraEditors.LabelControl lbl_biensoxe;
-        private DevExpress.XtraEditors.LabelControl lbl_LoaiThuPhi;
-        private DevExpress.XtraEditors.LabelControl lbl_giatien;
-        private DevExpress.XtraEditors.LabelControl lbl_loaixe;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Timer timer_LoadOldDb;
-        private DevExpress.XtraEditors.LabelControl lbl_link;
-        private System.Windows.Forms.ListBox listBox1;
         private DevExpress.Utils.ImageCollection imageCollection1;
-        private DevExpress.XtraEditors.LabelControl lbl_CaptionGoiYLoi;
-        private DevExpress.XtraEditors.LabelControl lbl_GoiYLoi;
-        private DevExpress.XtraEditors.LabelControl lbl_LoaiVe;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private System.Windows.Forms.Button btn_next;
@@ -1135,5 +1399,50 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private DevExpress.XtraEditors.SimpleButton btnVideoPlayback;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private DevExpress.XtraEditors.GroupControl grp_SettingFillData;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi0;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi1;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi2;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi3;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi4;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi5;
+        private DevExpress.XtraEditors.SimpleButton btn_Loi6;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private System.Windows.Forms.ContextMenuStrip mc_Image;
+        private System.Windows.Forms.ToolStripMenuItem lưuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inMànHìnhToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private DevExpress.XtraEditors.LabelControl lbl_GoiYLoi;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private DevExpress.XtraEditors.LabelControl lbl_LoaiVe;
+        private System.Windows.Forms.ListBox listBox1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl lbl_giatien;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl lbl_biensoxe;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lbl_LoaiThuPhi;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lbl_loaixe;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private DevExpress.XtraEditors.LabelControl lblStandard_UpdatePerson;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl lblStandard_UpdateDate;
+        private DevExpress.XtraEditors.LabelControl lblStandard_VehNum;
+        private DevExpress.XtraEditors.LabelControl lblStandard_VehType;
+        private DevExpress.XtraEditors.LabelControl lblStandard_Price;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl lblWarmning;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="DatasetReview.cs">
       <DependentUpon>DatasetReview.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DatasetReview.Designer.cs">
       <AutoGen>True</AutoGen>

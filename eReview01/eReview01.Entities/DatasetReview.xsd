@@ -67,34 +67,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="vehicle_type" msprop:Generator_TableClassName="vehicle_typeDataTable" msprop:Generator_TableVarName="tablevehicle_type" msprop:Generator_TablePropName="vehicle_type" msprop:Generator_RowDeletingName="vehicle_typeRowDeleting" msprop:Generator_RowChangingName="vehicle_typeRowChanging" msprop:Generator_RowEvHandlerName="vehicle_typeRowChangeEventHandler" msprop:Generator_RowDeletedName="vehicle_typeRowDeleted" msprop:Generator_UserTableName="vehicle_type" msprop:Generator_RowChangedName="vehicle_typeRowChanged" msprop:Generator_RowEvArgName="vehicle_typeRowChangeEvent" msprop:Generator_RowClassName="vehicle_typeRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="VEH_TYPE_ID" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_ID" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_ID" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_IDColumn" msprop:Generator_UserColumnName="VEH_TYPE_ID" type="xs:int" />
-              <xs:element name="VEH_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_NAMEColumn" msprop:Generator_UserColumnName="VEH_TYPE_NAME">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="55" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="VEH_TYPE_DESC" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_DESC" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_DESC" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_DESCColumn" msprop:Generator_UserColumnName="VEH_TYPE_DESC" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="VEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_TEMP_IMG_PATHColumn" msprop:Generator_UserColumnName="VEH_TYPE_TEMP_IMG_PATH" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="VEH_TYPE_ID" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_ID" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_ID" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_IDColumn" msprop:Generator_UserColumnName="VEH_TYPE_ID" type="xs:short" minOccurs="0" />
+              <xs:element name="TYPE" msprop:Generator_ColumnVarNameInTable="columnTYPE" msprop:Generator_ColumnPropNameInRow="TYPE" msprop:Generator_ColumnPropNameInTable="TYPEColumn" msprop:Generator_UserColumnName="TYPE" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -778,6 +752,35 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vehicle_type" msprop:Generator_TableClassName="vehicle_typeDataTable" msprop:Generator_TableVarName="tablevehicle_type" msprop:Generator_TablePropName="vehicle_type" msprop:Generator_RowDeletingName="vehicle_typeRowDeleting" msprop:Generator_RowChangingName="vehicle_typeRowChanging" msprop:Generator_RowEvHandlerName="vehicle_typeRowChangeEventHandler" msprop:Generator_RowDeletedName="vehicle_typeRowDeleted" msprop:Generator_UserTableName="vehicle_type" msprop:Generator_RowChangedName="vehicle_typeRowChanged" msprop:Generator_RowEvArgName="vehicle_typeRowChangeEvent" msprop:Generator_RowClassName="vehicle_typeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VEH_TYPE_ID" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_ID" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_ID" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_IDColumn" msprop:Generator_UserColumnName="VEH_TYPE_ID" type="xs:int" />
+              <xs:element name="VEH_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_NAMEColumn" msprop:Generator_UserColumnName="VEH_TYPE_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="55" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VEH_TYPE_DESC" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_DESC" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_DESC" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_DESCColumn" msprop:Generator_UserColumnName="VEH_TYPE_DESC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_TEMP_IMG_PATH" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_TEMP_IMG_PATHColumn" msprop:Generator_UserColumnName="VEH_TYPE_TEMP_IMG_PATH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VEH_TYPE_FEE" msprop:Generator_ColumnVarNameInTable="columnVEH_TYPE_FEE" msprop:Generator_ColumnPropNameInRow="VEH_TYPE_FEE" msprop:Generator_ColumnPropNameInTable="VEH_TYPE_FEEColumn" msprop:Generator_UserColumnName="VEH_TYPE_FEE" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -788,10 +791,6 @@
     <xs:unique name="ticket_type_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ticket_type" />
       <xs:field xpath="mstns:TICK_TYPE_ID" />
-    </xs:unique>
-    <xs:unique name="vehicle_type_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:vehicle_type" />
-      <xs:field xpath="mstns:VEH_TYPE_ID" />
     </xs:unique>
     <xs:unique name="vehicle_info_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:vehicle_info" />
@@ -864,6 +863,10 @@
     <xs:unique name="local_car_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:local_car" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="vehicle_type_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vehicle_type" />
+      <xs:field xpath="mstns:VEH_TYPE_ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

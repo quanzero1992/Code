@@ -28,8 +28,6 @@ namespace eReview01.Entities {
         
         private ticket_typeDataTable tableticket_type;
         
-        private vehicle_typeDataTable tablevehicle_type;
-        
         private vehicle_infoDataTable tablevehicle_info;
         
         private lane_typeDataTable tablelane_type;
@@ -66,6 +64,8 @@ namespace eReview01.Entities {
         
         private local_carDataTable tablelocal_car;
         
+        private vehicle_typeDataTable tablevehicle_type;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -99,9 +99,6 @@ namespace eReview01.Entities {
                 }
                 if ((ds.Tables["ticket_type"] != null)) {
                     base.Tables.Add(new ticket_typeDataTable(ds.Tables["ticket_type"]));
-                }
-                if ((ds.Tables["vehicle_type"] != null)) {
-                    base.Tables.Add(new vehicle_typeDataTable(ds.Tables["vehicle_type"]));
                 }
                 if ((ds.Tables["vehicle_info"] != null)) {
                     base.Tables.Add(new vehicle_infoDataTable(ds.Tables["vehicle_info"]));
@@ -157,6 +154,9 @@ namespace eReview01.Entities {
                 if ((ds.Tables["local_car"] != null)) {
                     base.Tables.Add(new local_carDataTable(ds.Tables["local_car"]));
                 }
+                if ((ds.Tables["vehicle_type"] != null)) {
+                    base.Tables.Add(new vehicle_typeDataTable(ds.Tables["vehicle_type"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -192,16 +192,6 @@ namespace eReview01.Entities {
         public ticket_typeDataTable ticket_type {
             get {
                 return this.tableticket_type;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public vehicle_typeDataTable vehicle_type {
-            get {
-                return this.tablevehicle_type;
             }
         }
         
@@ -387,6 +377,16 @@ namespace eReview01.Entities {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vehicle_typeDataTable vehicle_type {
+            get {
+                return this.tablevehicle_type;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -458,9 +458,6 @@ namespace eReview01.Entities {
                 if ((ds.Tables["ticket_type"] != null)) {
                     base.Tables.Add(new ticket_typeDataTable(ds.Tables["ticket_type"]));
                 }
-                if ((ds.Tables["vehicle_type"] != null)) {
-                    base.Tables.Add(new vehicle_typeDataTable(ds.Tables["vehicle_type"]));
-                }
                 if ((ds.Tables["vehicle_info"] != null)) {
                     base.Tables.Add(new vehicle_infoDataTable(ds.Tables["vehicle_info"]));
                 }
@@ -515,6 +512,9 @@ namespace eReview01.Entities {
                 if ((ds.Tables["local_car"] != null)) {
                     base.Tables.Add(new local_carDataTable(ds.Tables["local_car"]));
                 }
+                if ((ds.Tables["vehicle_type"] != null)) {
+                    base.Tables.Add(new vehicle_typeDataTable(ds.Tables["vehicle_type"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -558,12 +558,6 @@ namespace eReview01.Entities {
             if ((initTable == true)) {
                 if ((this.tableticket_type != null)) {
                     this.tableticket_type.InitVars();
-                }
-            }
-            this.tablevehicle_type = ((vehicle_typeDataTable)(base.Tables["vehicle_type"]));
-            if ((initTable == true)) {
-                if ((this.tablevehicle_type != null)) {
-                    this.tablevehicle_type.InitVars();
                 }
             }
             this.tablevehicle_info = ((vehicle_infoDataTable)(base.Tables["vehicle_info"]));
@@ -674,6 +668,12 @@ namespace eReview01.Entities {
                     this.tablelocal_car.InitVars();
                 }
             }
+            this.tablevehicle_type = ((vehicle_typeDataTable)(base.Tables["vehicle_type"]));
+            if ((initTable == true)) {
+                if ((this.tablevehicle_type != null)) {
+                    this.tablevehicle_type.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -688,8 +688,6 @@ namespace eReview01.Entities {
             base.Tables.Add(this.tableticket_info);
             this.tableticket_type = new ticket_typeDataTable();
             base.Tables.Add(this.tableticket_type);
-            this.tablevehicle_type = new vehicle_typeDataTable();
-            base.Tables.Add(this.tablevehicle_type);
             this.tablevehicle_info = new vehicle_infoDataTable();
             base.Tables.Add(this.tablevehicle_info);
             this.tablelane_type = new lane_typeDataTable();
@@ -726,6 +724,8 @@ namespace eReview01.Entities {
             base.Tables.Add(this.tabletc_option);
             this.tablelocal_car = new local_carDataTable();
             base.Tables.Add(this.tablelocal_car);
+            this.tablevehicle_type = new vehicle_typeDataTable();
+            base.Tables.Add(this.tablevehicle_type);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,12 +737,6 @@ namespace eReview01.Entities {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeticket_type() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializevehicle_type() {
             return false;
         }
         
@@ -856,6 +850,12 @@ namespace eReview01.Entities {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializevehicle_type() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -916,9 +916,6 @@ namespace eReview01.Entities {
         public delegate void ticket_typeRowChangeEventHandler(object sender, ticket_typeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void vehicle_typeRowChangeEventHandler(object sender, vehicle_typeRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void vehicle_infoRowChangeEventHandler(object sender, vehicle_infoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -971,6 +968,9 @@ namespace eReview01.Entities {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void local_carRowChangeEventHandler(object sender, local_carRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void vehicle_typeRowChangeEventHandler(object sender, vehicle_typeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1411,6 +1411,10 @@ namespace eReview01.Entities {
             
             private global::System.Data.DataColumn columnTC_TICKET_TYPE_DESCRIPTION;
             
+            private global::System.Data.DataColumn columnVEH_TYPE_ID;
+            
+            private global::System.Data.DataColumn columnTYPE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ticket_typeDataTable() {
@@ -1478,6 +1482,22 @@ namespace eReview01.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_IDColumn {
+                get {
+                    return this.columnVEH_TYPE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TYPEColumn {
+                get {
+                    return this.columnTYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1513,13 +1533,15 @@ namespace eReview01.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ticket_typeRow Addticket_typeRow(int TICK_TYPE_ID, int TICK_TYPE_FEE, string TICK_TYPE_NAME, string TC_TICKET_TYPE_DESCRIPTION) {
+            public ticket_typeRow Addticket_typeRow(int TICK_TYPE_ID, int TICK_TYPE_FEE, string TICK_TYPE_NAME, string TC_TICKET_TYPE_DESCRIPTION, short VEH_TYPE_ID, short TYPE) {
                 ticket_typeRow rowticket_typeRow = ((ticket_typeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TICK_TYPE_ID,
                         TICK_TYPE_FEE,
                         TICK_TYPE_NAME,
-                        TC_TICKET_TYPE_DESCRIPTION};
+                        TC_TICKET_TYPE_DESCRIPTION,
+                        VEH_TYPE_ID,
+                        TYPE};
                 rowticket_typeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowticket_typeRow);
                 return rowticket_typeRow;
@@ -1553,6 +1575,8 @@ namespace eReview01.Entities {
                 this.columnTICK_TYPE_FEE = base.Columns["TICK_TYPE_FEE"];
                 this.columnTICK_TYPE_NAME = base.Columns["TICK_TYPE_NAME"];
                 this.columnTC_TICKET_TYPE_DESCRIPTION = base.Columns["TC_TICKET_TYPE_DESCRIPTION"];
+                this.columnVEH_TYPE_ID = base.Columns["VEH_TYPE_ID"];
+                this.columnTYPE = base.Columns["TYPE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1566,6 +1590,10 @@ namespace eReview01.Entities {
                 base.Columns.Add(this.columnTICK_TYPE_NAME);
                 this.columnTC_TICKET_TYPE_DESCRIPTION = new global::System.Data.DataColumn("TC_TICKET_TYPE_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTC_TICKET_TYPE_DESCRIPTION);
+                this.columnVEH_TYPE_ID = new global::System.Data.DataColumn("VEH_TYPE_ID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_ID);
+                this.columnTYPE = new global::System.Data.DataColumn("TYPE", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTYPE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTICK_TYPE_ID}, true));
                 this.columnTICK_TYPE_ID.AllowDBNull = false;
@@ -1660,310 +1688,6 @@ namespace eReview01.Entities {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ticket_typeDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class vehicle_typeDataTable : global::System.Data.TypedTableBase<vehicle_typeRow> {
-            
-            private global::System.Data.DataColumn columnVEH_TYPE_ID;
-            
-            private global::System.Data.DataColumn columnVEH_TYPE_NAME;
-            
-            private global::System.Data.DataColumn columnVEH_TYPE_DESC;
-            
-            private global::System.Data.DataColumn columnVEH_TYPE_TEMP_IMG_PATH;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeDataTable() {
-                this.TableName = "vehicle_type";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vehicle_typeDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected vehicle_typeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VEH_TYPE_IDColumn {
-                get {
-                    return this.columnVEH_TYPE_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VEH_TYPE_NAMEColumn {
-                get {
-                    return this.columnVEH_TYPE_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VEH_TYPE_DESCColumn {
-                get {
-                    return this.columnVEH_TYPE_DESC;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VEH_TYPE_TEMP_IMG_PATHColumn {
-                get {
-                    return this.columnVEH_TYPE_TEMP_IMG_PATH;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRow this[int index] {
-                get {
-                    return ((vehicle_typeRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vehicle_typeRowChangeEventHandler vehicle_typeRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vehicle_typeRowChangeEventHandler vehicle_typeRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vehicle_typeRowChangeEventHandler vehicle_typeRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vehicle_typeRowChangeEventHandler vehicle_typeRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addvehicle_typeRow(vehicle_typeRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRow Addvehicle_typeRow(int VEH_TYPE_ID, string VEH_TYPE_NAME, string VEH_TYPE_DESC, string VEH_TYPE_TEMP_IMG_PATH) {
-                vehicle_typeRow rowvehicle_typeRow = ((vehicle_typeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        VEH_TYPE_ID,
-                        VEH_TYPE_NAME,
-                        VEH_TYPE_DESC,
-                        VEH_TYPE_TEMP_IMG_PATH};
-                rowvehicle_typeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowvehicle_typeRow);
-                return rowvehicle_typeRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRow FindByVEH_TYPE_ID(int VEH_TYPE_ID) {
-                return ((vehicle_typeRow)(this.Rows.Find(new object[] {
-                            VEH_TYPE_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                vehicle_typeDataTable cln = ((vehicle_typeDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new vehicle_typeDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnVEH_TYPE_ID = base.Columns["VEH_TYPE_ID"];
-                this.columnVEH_TYPE_NAME = base.Columns["VEH_TYPE_NAME"];
-                this.columnVEH_TYPE_DESC = base.Columns["VEH_TYPE_DESC"];
-                this.columnVEH_TYPE_TEMP_IMG_PATH = base.Columns["VEH_TYPE_TEMP_IMG_PATH"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnVEH_TYPE_ID = new global::System.Data.DataColumn("VEH_TYPE_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVEH_TYPE_ID);
-                this.columnVEH_TYPE_NAME = new global::System.Data.DataColumn("VEH_TYPE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVEH_TYPE_NAME);
-                this.columnVEH_TYPE_DESC = new global::System.Data.DataColumn("VEH_TYPE_DESC", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVEH_TYPE_DESC);
-                this.columnVEH_TYPE_TEMP_IMG_PATH = new global::System.Data.DataColumn("VEH_TYPE_TEMP_IMG_PATH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVEH_TYPE_TEMP_IMG_PATH);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnVEH_TYPE_ID}, true));
-                this.columnVEH_TYPE_ID.AllowDBNull = false;
-                this.columnVEH_TYPE_ID.Unique = true;
-                this.columnVEH_TYPE_NAME.AllowDBNull = false;
-                this.columnVEH_TYPE_NAME.MaxLength = 55;
-                this.columnVEH_TYPE_DESC.MaxLength = 255;
-                this.columnVEH_TYPE_TEMP_IMG_PATH.MaxLength = 255;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRow Newvehicle_typeRow() {
-                return ((vehicle_typeRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new vehicle_typeRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(vehicle_typeRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.vehicle_typeRowChanged != null)) {
-                    this.vehicle_typeRowChanged(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.vehicle_typeRowChanging != null)) {
-                    this.vehicle_typeRowChanging(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.vehicle_typeRowDeleted != null)) {
-                    this.vehicle_typeRowDeleted(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.vehicle_typeRowDeleting != null)) {
-                    this.vehicle_typeRowDeleting(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removevehicle_typeRow(vehicle_typeRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DatasetReview ds = new DatasetReview();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "vehicle_typeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9034,6 +8758,324 @@ namespace eReview01.Entities {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vehicle_typeDataTable : global::System.Data.TypedTableBase<vehicle_typeRow> {
+            
+            private global::System.Data.DataColumn columnVEH_TYPE_ID;
+            
+            private global::System.Data.DataColumn columnVEH_TYPE_NAME;
+            
+            private global::System.Data.DataColumn columnVEH_TYPE_DESC;
+            
+            private global::System.Data.DataColumn columnVEH_TYPE_TEMP_IMG_PATH;
+            
+            private global::System.Data.DataColumn columnVEH_TYPE_FEE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeDataTable() {
+                this.TableName = "vehicle_type";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vehicle_typeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected vehicle_typeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_IDColumn {
+                get {
+                    return this.columnVEH_TYPE_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_NAMEColumn {
+                get {
+                    return this.columnVEH_TYPE_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_DESCColumn {
+                get {
+                    return this.columnVEH_TYPE_DESC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_TEMP_IMG_PATHColumn {
+                get {
+                    return this.columnVEH_TYPE_TEMP_IMG_PATH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VEH_TYPE_FEEColumn {
+                get {
+                    return this.columnVEH_TYPE_FEE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRow this[int index] {
+                get {
+                    return ((vehicle_typeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vehicle_typeRowChangeEventHandler vehicle_typeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vehicle_typeRowChangeEventHandler vehicle_typeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vehicle_typeRowChangeEventHandler vehicle_typeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vehicle_typeRowChangeEventHandler vehicle_typeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addvehicle_typeRow(vehicle_typeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRow Addvehicle_typeRow(int VEH_TYPE_ID, string VEH_TYPE_NAME, string VEH_TYPE_DESC, string VEH_TYPE_TEMP_IMG_PATH, double VEH_TYPE_FEE) {
+                vehicle_typeRow rowvehicle_typeRow = ((vehicle_typeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        VEH_TYPE_ID,
+                        VEH_TYPE_NAME,
+                        VEH_TYPE_DESC,
+                        VEH_TYPE_TEMP_IMG_PATH,
+                        VEH_TYPE_FEE};
+                rowvehicle_typeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvehicle_typeRow);
+                return rowvehicle_typeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRow FindByVEH_TYPE_ID(int VEH_TYPE_ID) {
+                return ((vehicle_typeRow)(this.Rows.Find(new object[] {
+                            VEH_TYPE_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vehicle_typeDataTable cln = ((vehicle_typeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vehicle_typeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnVEH_TYPE_ID = base.Columns["VEH_TYPE_ID"];
+                this.columnVEH_TYPE_NAME = base.Columns["VEH_TYPE_NAME"];
+                this.columnVEH_TYPE_DESC = base.Columns["VEH_TYPE_DESC"];
+                this.columnVEH_TYPE_TEMP_IMG_PATH = base.Columns["VEH_TYPE_TEMP_IMG_PATH"];
+                this.columnVEH_TYPE_FEE = base.Columns["VEH_TYPE_FEE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnVEH_TYPE_ID = new global::System.Data.DataColumn("VEH_TYPE_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_ID);
+                this.columnVEH_TYPE_NAME = new global::System.Data.DataColumn("VEH_TYPE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_NAME);
+                this.columnVEH_TYPE_DESC = new global::System.Data.DataColumn("VEH_TYPE_DESC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_DESC);
+                this.columnVEH_TYPE_TEMP_IMG_PATH = new global::System.Data.DataColumn("VEH_TYPE_TEMP_IMG_PATH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_TEMP_IMG_PATH);
+                this.columnVEH_TYPE_FEE = new global::System.Data.DataColumn("VEH_TYPE_FEE", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVEH_TYPE_FEE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnVEH_TYPE_ID}, true));
+                this.columnVEH_TYPE_ID.AllowDBNull = false;
+                this.columnVEH_TYPE_ID.Unique = true;
+                this.columnVEH_TYPE_NAME.AllowDBNull = false;
+                this.columnVEH_TYPE_NAME.MaxLength = 55;
+                this.columnVEH_TYPE_DESC.MaxLength = 255;
+                this.columnVEH_TYPE_TEMP_IMG_PATH.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRow Newvehicle_typeRow() {
+                return ((vehicle_typeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vehicle_typeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vehicle_typeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vehicle_typeRowChanged != null)) {
+                    this.vehicle_typeRowChanged(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vehicle_typeRowChanging != null)) {
+                    this.vehicle_typeRowChanging(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vehicle_typeRowDeleted != null)) {
+                    this.vehicle_typeRowDeleted(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vehicle_typeRowDeleting != null)) {
+                    this.vehicle_typeRowDeleting(this, new vehicle_typeRowChangeEvent(((vehicle_typeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removevehicle_typeRow(vehicle_typeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatasetReview ds = new DatasetReview();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vehicle_typeDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ticket_infoRow : global::System.Data.DataRow {
@@ -9297,6 +9339,38 @@ namespace eReview01.Entities {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short VEH_TYPE_ID {
+                get {
+                    try {
+                        return ((short)(this[this.tableticket_type.VEH_TYPE_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_ID\' in table \'ticket_type\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableticket_type.VEH_TYPE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short TYPE {
+                get {
+                    try {
+                        return ((short)(this[this.tableticket_type.TYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TYPE\' in table \'ticket_type\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableticket_type.TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTC_TICKET_TYPE_DESCRIPTIONNull() {
                 return this.IsNull(this.tableticket_type.TC_TICKET_TYPE_DESCRIPTIONColumn);
             }
@@ -9306,98 +9380,29 @@ namespace eReview01.Entities {
             public void SetTC_TICKET_TYPE_DESCRIPTIONNull() {
                 this[this.tableticket_type.TC_TICKET_TYPE_DESCRIPTIONColumn] = global::System.Convert.DBNull;
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class vehicle_typeRow : global::System.Data.DataRow {
-            
-            private vehicle_typeDataTable tablevehicle_type;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vehicle_typeRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablevehicle_type = ((vehicle_typeDataTable)(this.Table));
+            public bool IsVEH_TYPE_IDNull() {
+                return this.IsNull(this.tableticket_type.VEH_TYPE_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int VEH_TYPE_ID {
-                get {
-                    return ((int)(this[this.tablevehicle_type.VEH_TYPE_IDColumn]));
-                }
-                set {
-                    this[this.tablevehicle_type.VEH_TYPE_IDColumn] = value;
-                }
+            public void SetVEH_TYPE_IDNull() {
+                this[this.tableticket_type.VEH_TYPE_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string VEH_TYPE_NAME {
-                get {
-                    return ((string)(this[this.tablevehicle_type.VEH_TYPE_NAMEColumn]));
-                }
-                set {
-                    this[this.tablevehicle_type.VEH_TYPE_NAMEColumn] = value;
-                }
+            public bool IsTYPENull() {
+                return this.IsNull(this.tableticket_type.TYPEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string VEH_TYPE_DESC {
-                get {
-                    try {
-                        return ((string)(this[this.tablevehicle_type.VEH_TYPE_DESCColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_DESC\' in table \'vehicle_type\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevehicle_type.VEH_TYPE_DESCColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string VEH_TYPE_TEMP_IMG_PATH {
-                get {
-                    try {
-                        return ((string)(this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_TEMP_IMG_PATH\' in table \'vehicle_type\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVEH_TYPE_DESCNull() {
-                return this.IsNull(this.tablevehicle_type.VEH_TYPE_DESCColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVEH_TYPE_DESCNull() {
-                this[this.tablevehicle_type.VEH_TYPE_DESCColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVEH_TYPE_TEMP_IMG_PATHNull() {
-                return this.IsNull(this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVEH_TYPE_TEMP_IMG_PATHNull() {
-                this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn] = global::System.Convert.DBNull;
+            public void SetTYPENull() {
+                this[this.tableticket_type.TYPEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13839,6 +13844,127 @@ namespace eReview01.Entities {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vehicle_typeRow : global::System.Data.DataRow {
+            
+            private vehicle_typeDataTable tablevehicle_type;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vehicle_typeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevehicle_type = ((vehicle_typeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VEH_TYPE_ID {
+                get {
+                    return ((int)(this[this.tablevehicle_type.VEH_TYPE_IDColumn]));
+                }
+                set {
+                    this[this.tablevehicle_type.VEH_TYPE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VEH_TYPE_NAME {
+                get {
+                    return ((string)(this[this.tablevehicle_type.VEH_TYPE_NAMEColumn]));
+                }
+                set {
+                    this[this.tablevehicle_type.VEH_TYPE_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VEH_TYPE_DESC {
+                get {
+                    try {
+                        return ((string)(this[this.tablevehicle_type.VEH_TYPE_DESCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_DESC\' in table \'vehicle_type\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevehicle_type.VEH_TYPE_DESCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string VEH_TYPE_TEMP_IMG_PATH {
+                get {
+                    try {
+                        return ((string)(this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_TEMP_IMG_PATH\' in table \'vehicle_type\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double VEH_TYPE_FEE {
+                get {
+                    try {
+                        return ((double)(this[this.tablevehicle_type.VEH_TYPE_FEEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VEH_TYPE_FEE\' in table \'vehicle_type\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevehicle_type.VEH_TYPE_FEEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVEH_TYPE_DESCNull() {
+                return this.IsNull(this.tablevehicle_type.VEH_TYPE_DESCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVEH_TYPE_DESCNull() {
+                this[this.tablevehicle_type.VEH_TYPE_DESCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVEH_TYPE_TEMP_IMG_PATHNull() {
+                return this.IsNull(this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVEH_TYPE_TEMP_IMG_PATHNull() {
+                this[this.tablevehicle_type.VEH_TYPE_TEMP_IMG_PATHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVEH_TYPE_FEENull() {
+                return this.IsNull(this.tablevehicle_type.VEH_TYPE_FEEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVEH_TYPE_FEENull() {
+                this[this.tablevehicle_type.VEH_TYPE_FEEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -13892,40 +14018,6 @@ namespace eReview01.Entities {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ticket_typeRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class vehicle_typeRowChangeEvent : global::System.EventArgs {
-            
-            private vehicle_typeRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRowChangeEvent(vehicle_typeRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vehicle_typeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14538,6 +14630,40 @@ namespace eReview01.Entities {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public local_carRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class vehicle_typeRowChangeEvent : global::System.EventArgs {
+            
+            private vehicle_typeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRowChangeEvent(vehicle_typeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vehicle_typeRow Row {
                 get {
                     return this.eventRow;
                 }

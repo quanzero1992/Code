@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_SearchAndEdit));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
@@ -67,6 +68,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pic_ImgBs = new DevExpress.XtraEditors.PictureEdit();
+            this.mc_Image = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inMànHìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.grid_SearchAndEdit = new DevExpress.XtraGrid.GridControl();
             this.grd_HistoryGs = new eMonitor01.MyGridView();
@@ -103,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImgBs.Properties)).BeginInit();
+            this.mc_Image.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_SearchAndEdit)).BeginInit();
@@ -516,13 +523,54 @@
             this.pic_ImgBs.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.pic_ImgBs.Properties.AllowScrollViaMouseDrag = false;
             this.pic_ImgBs.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.pic_ImgBs.Properties.ContextMenuStrip = this.mc_Image;
             this.pic_ImgBs.Properties.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pic_ImgBs.Properties.ErrorImage")));
             this.pic_ImgBs.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pic_ImgBs.Properties.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pic_ImgBs_Properties_MouseWheel);
             this.pic_ImgBs.Size = new System.Drawing.Size(230, 173);
             this.pic_ImgBs.TabIndex = 0;
             this.pic_ImgBs.MouseLeave += new System.EventHandler(this.pic_ImgBs_MouseLeave);
             this.pic_ImgBs.MouseHover += new System.EventHandler(this.pic_ImgBs_MouseHover);
             this.pic_ImgBs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_ImgBs_MouseMove);
+            // 
+            // mc_Image
+            // 
+            this.mc_Image.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lưuToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.inToolStripMenuItem,
+            this.inMànHìnhToolStripMenuItem});
+            this.mc_Image.Name = "mc_Image";
+            this.mc_Image.Size = new System.Drawing.Size(139, 76);
+            // 
+            // lưuToolStripMenuItem
+            // 
+            this.lưuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuToolStripMenuItem.Image")));
+            this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.lưuToolStripMenuItem.Text = "Lưu";
+            this.lưuToolStripMenuItem.Click += new System.EventHandler(this.lưuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            // 
+            // inToolStripMenuItem
+            // 
+            this.inToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inToolStripMenuItem.Image")));
+            this.inToolStripMenuItem.Name = "inToolStripMenuItem";
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inToolStripMenuItem.Text = "In ảnh";
+            this.inToolStripMenuItem.Click += new System.EventHandler(this.inToolStripMenuItem_Click);
+            // 
+            // inMànHìnhToolStripMenuItem
+            // 
+            this.inMànHìnhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inMànHìnhToolStripMenuItem.Image")));
+            this.inMànHìnhToolStripMenuItem.Name = "inMànHìnhToolStripMenuItem";
+            this.inMànHìnhToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inMànHìnhToolStripMenuItem.Text = "In màn hình";
+            this.inMànHìnhToolStripMenuItem.Click += new System.EventHandler(this.inMànHìnhToolStripMenuItem_Click);
             // 
             // panelControl1
             // 
@@ -946,6 +994,7 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImgBs.Properties)).EndInit();
+            this.mc_Image.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_SearchAndEdit)).EndInit();
@@ -1021,5 +1070,10 @@
         private DevExpress.XtraEditors.PictureEdit pic_BsDetail;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repError;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.ContextMenuStrip mc_Image;
+        private System.Windows.Forms.ToolStripMenuItem lưuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem inToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inMànHìnhToolStripMenuItem;
     }
 }

@@ -326,6 +326,53 @@ namespace eMonitor01
             if (cn.State == ConnectionState.Open) cn.Close();
             cmd.Dispose();
         }
+
+        /// <summary>
+        /// Quanvt edit 18/06/2016
+        /// Hàm trả về thông tin xe chuẩn theo biển số
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetStandardVerhicleInfo(string verNumber)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("VehNum",typeof(string));
+            dt.Columns.Add("Type", typeof(string));
+            dt.Columns.Add("DateUpdate", typeof(DateTime));
+            dt.Columns.Add("UserUpdate", typeof(string));
+
+            try
+            {
+                cn = GetCon();
+                cn.Open();
+                MySqlCommand cmd = new MySqlCommand("proc_GetVehicleStatandard", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("?verhicleNumber", MySqlDbType.VarChar, 15).Value = verNumber;
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string Type = reader.GetString(0);
+                        DateTime DateUpdate = reader.GetDateTime(1);
+                        string UserUpdate = reader.GetString(2);
+
+                        dt.Rows.Add(verNumber, Type, DateUpdate, UserUpdate);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                dt = null;
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return dt;
+        }
+
+
         /// <summary>
         /// Thêm mới thông tin xe chuẩn
         /// </summary>

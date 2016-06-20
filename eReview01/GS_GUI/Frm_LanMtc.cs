@@ -20,6 +20,8 @@ using System.IO;
 using eReview01.CommonUI;
 using log4netDatabase;
 using System.Linq;
+using DevExpress.Utils;
+using System.Drawing.Imaging;
 
 
 namespace eMonitor01
@@ -117,7 +119,7 @@ namespace eMonitor01
                 OptionGoiYLoi();
                 if (grid_Mtc.RowCount < 1)
                 {
-                    lbl_CaptionGoiYLoi.Visible = false;
+                    //lbl_CaptionGoiYLoi.Visible = false;
                     lbl_GoiYLoi.Visible = false;
                 }
             }
@@ -425,9 +427,11 @@ namespace eMonitor01
         
         private void grid_Mtc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            
             if (e.FocusedRowHandle < 0) return;
             int dong = grid_Mtc.FocusedRowHandle;
             int tong = grid_Mtc.RowCount;
+            
             //OptionGoiYLoi();
             GridView view = grid_Mtc;
             try
@@ -461,22 +465,25 @@ namespace eMonitor01
                 }
                 if (grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == null || (int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 0)
                 {
-                    lbl_CaptionGoiYLoi.ForeColor = Color.Green;
+                    //lbl_CaptionGoiYLoi.ForeColor = Color.Green;
                     lbl_GoiYLoi.ForeColor = Color.Green;
-                    lbl_GoiYLoi.Text = "Lượt thông xe không có lỗi)";
+                    lbl_GoiYLoi.Text = "Lượt thông xe không có lỗi";
                 }
                 else if ((int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 1)
                 {
-                    lbl_CaptionGoiYLoi.ForeColor = Color.OrangeRed;
+                    //lbl_CaptionGoiYLoi.ForeColor = Color.OrangeRed;
                     lbl_GoiYLoi.ForeColor = Color.OrangeRed;
-                    lbl_GoiYLoi.Text = "Lượt thông xe nghi ngờ)";
+                    lbl_GoiYLoi.Text = "Lượt thông xe nghi ngờ";
                 }
                 else
                 {
-                    lbl_CaptionGoiYLoi.ForeColor = Color.Red;
+                    //lbl_CaptionGoiYLoi.ForeColor = Color.Red;
                     lbl_GoiYLoi.ForeColor = Color.Red;
-                    lbl_GoiYLoi.Text = "Lượt thông xe có lỗi)";
+                    lbl_GoiYLoi.Text = "Lượt thông xe có lỗi";
                 }
+                int LuotThangQuy = string.IsNullOrEmpty(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ToString()) ? 0 : grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ConvertToInt();
+                LoadStandardVehicle(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "BienSo").ToString(), grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "Phi").ConvertToInt(), LuotThangQuy);
+                Pic_Mtc.Properties.ZoomPercent = 100;
                 //XuLyBanGhiDaXem();
             }
             catch (Exception ex)
@@ -745,7 +752,7 @@ namespace eMonitor01
                 btn_Loi4.Enabled = false;
                 btn_Loi5.Enabled = false;
                 btn_Loi6.Enabled = false;
-                lbl_CaptionGoiYLoi.Visible = false;
+                //lbl_CaptionGoiYLoi.Visible = false;
                 lbl_GoiYLoi.Visible = false;
 
             }
@@ -767,7 +774,7 @@ namespace eMonitor01
                     EnableButtonLoi(false);
                     grp_SettingFillData.Enabled = true;
                     lbl_GoiYLoi.Visible = false;
-                    lbl_CaptionGoiYLoi.Visible = false;
+                    //lbl_CaptionGoiYLoi.Visible = false;
                     // btn_Data.Enabled = false;                
                 }
                 else
@@ -836,7 +843,7 @@ namespace eMonitor01
                     }
                     else
                     {
-                        lbl_CaptionGoiYLoi.Visible = false;
+                        //lbl_CaptionGoiYLoi.Visible = false;
                         lbl_GoiYLoi.Visible = false;
                     }
                     LoadInfo();
@@ -900,7 +907,7 @@ namespace eMonitor01
                     else
                     {
                         lbl_GoiYLoi.Visible = false;
-                        lbl_CaptionGoiYLoi.Visible = false;
+                        //lbl_CaptionGoiYLoi.Visible = false;
                     }
                     LoadInfo();
                     Cursor.Current = Cursors.Default;
@@ -1145,18 +1152,21 @@ namespace eMonitor01
                     if (grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == null || (int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 0)
                     {
                         lbl_GoiYLoi.ForeColor = Color.Green;
-                        lbl_GoiYLoi.Text = "Lượt thông xe không có lỗi)";
+                        lbl_GoiYLoi.Text = "Lượt thông xe không có lỗi";
                     }
                     else if ((int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 1)
                     {
                         lbl_GoiYLoi.ForeColor = Color.OrangeRed;
-                        lbl_GoiYLoi.Text = "Lượt thông xe nghi ngờ)";
+                        lbl_GoiYLoi.Text = "Lượt thông xe nghi ngờ";
                     }
                     else
                     {
                         lbl_GoiYLoi.ForeColor = Color.Red;
-                        lbl_GoiYLoi.Text = "Lượt thông xe có lỗi)";
+                        lbl_GoiYLoi.Text = "Lượt thông xe có lỗi";
                     }
+
+                    int LuotThangQuy = string.IsNullOrEmpty(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ToString()) ? 0 : grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ConvertToInt();
+                    LoadStandardVehicle(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "BienSo").ToString(), grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "Phi").ConvertToInt(), LuotThangQuy);
                 }
             }
             catch (Exception ex)
@@ -1171,13 +1181,13 @@ namespace eMonitor01
             key = MonitorSetting.TuDongPhatHienNghiNgo;
             if (key == false)
             {
-                lbl_CaptionGoiYLoi.Visible = false;
+                //lbl_CaptionGoiYLoi.Visible = false;
                 lbl_GoiYLoi.Visible = false;
                 gridColumn9.Visible = false;
             }
             else
             {
-                lbl_CaptionGoiYLoi.Visible = true;
+                //lbl_CaptionGoiYLoi.Visible = true;
                 lbl_GoiYLoi.Visible = true;
                 gridColumn9.Visible = true;
             }
@@ -1303,6 +1313,256 @@ namespace eMonitor01
         {
             XtraMessageBox.Show("Test");
         }
+
+        private void LoadStandardVehicle(string VehNum, int Price, int LuotThangQuy)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(VehNum)) return;
+                lblWarmning.Visible = false;
+                resetStandardVehicle();
+                ConnectDb cn = new ConnectDb();
+                DataTable dt = cn.GetStandardVerhicleInfo(VehNum);
+                if ( dt.Rows.Count >0)
+                {
+                    lblWarmning.Visible = true;
+                    lblStandard_VehNum.Text = VehNum;
+                    lblStandard_VehType.Text = dt.Rows[0]["Type"].ToString();
+                    lblStandard_UpdateDate.Text = dt.Rows[0]["DateUpdate"].ToString();
+                    string UserUpdate = dt.Rows[0]["UserUpdate"].ToString();
+                    int searchUser = CommonDictionary4Monitor.DataSource.user_info.Where(x => x.USER_INFO_ID == UserUpdate).Count().ConvertToInt(); // để đảm bảo UserUpdate có trong danh sách nhân viên hiện tại
+                    lblStandard_UpdatePerson.Text = searchUser < 1 ? UserUpdate : CommonDictionary4Monitor.DataSource.user_info.FirstOrDefault(x => x.USER_INFO_ID.Equals(UserUpdate)).USER_INFO_FULL;
+                    var aa = (from table in CommonDictionary4Monitor.DataSource.ticket_type.AsEnumerable()
+                             where table.VEH_TYPE_ID == dt.Rows[0]["Type"].ConvertToInt() && table.TYPE == LuotThangQuy
+                             select table.TICK_TYPE_FEE).ToList();
+                    int StandardPrice = aa[0].ConvertToInt();
+
+                    lblStandard_Price.Text =String.Format("{0} VNĐ", StandardPrice.ToString("0,0"));
+                    if (StandardPrice != Price)
+                    {
+                        lblWarmning.ForeColor = Color.OrangeRed;
+                        lblWarmning.Text = "Lượt soát vé không khớp với thông tin xe chuẩn";
+                    }
+                    else
+                    {
+                        lblWarmning.ForeColor = Color.Green;
+                        lblWarmning.Text = "Lượt soát vé khớp với thông tin xe chuẩn";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+        private void resetStandardVehicle()
+        {
+            lblStandard_Price.Text = "";
+            lblStandard_UpdateDate.Text = "";
+            lblStandard_UpdatePerson.Text = "";
+            lblStandard_VehNum.Text = "";
+            lblStandard_VehType.Text = "";
+            lblWarmning.Text = "";
+        }
+
+        float zoomSpeedFactor = 0.1f;
+        private void Pic_Mtc_Properties_MouseWheel(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Console.WriteLine(e.Delta);
+                if (e.Delta > 0 && Pic_Mtc.Properties.ZoomPercent < 500)
+                {
+                    Pic_Mtc.Properties.ZoomPercent += 50;
+                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
+                else if (e.Delta < 0 && Pic_Mtc.Properties.ZoomPercent >= 150)
+                {
+                    Pic_Mtc.Properties.ZoomPercent -= 50;
+                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
+                else
+                    return;
+                //else
+                //{
+                //    Pic_Mtc.Properties.ZoomPercent += 100;
+                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                //}
+
+                //int i = Math.Min(100, Math.Min((Pic_Mtc.Width - 12) * 100 / Pic_Mtc.Image.Width,
+                //                      (Pic_Mtc.Height - 2) * 100 / Pic_Mtc.Image.Height));
+                //Pic_Mtc.Properties.ZoomPercent = i;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void mc_Image_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void inToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Drawing.Printing.PrintDocument myPrintDocument1 = new System.Drawing.Printing.PrintDocument();
+                PrintDialog myPrinDialog1 = new PrintDialog();
+                myPrintDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument2_PrintPage);
+                myPrinDialog1.Document = myPrintDocument1;
+
+                if (myPrinDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    myPrintDocument1.Print();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex);
+            }
+        }
+
+        private void myPrintDocument2_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            
+            Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue;
+            Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height);
+            try
+            {
+                saveImage.Save("Image.jpg");
+
+                //Bitmap myBitmap1 = new Bitmap(Pic_Mtc.Width, Pic_Mtc.Height);
+                //Pic_Mtc.DrawToBitmap(myBitmap1, new Rectangle(0, 0, Pic_Mtc.Width, Pic_Mtc.Height));
+                //e.Graphics.DrawImage(myBitmap1, 0, 0);
+                //myBitmap1.Dispose();
+                e.Graphics.DrawImage(saveImage, 0, 0);
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+            finally
+            {
+                currentImage.Dispose();
+                saveImage.Dispose();
+            }
+        }
+
+        private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                          Screen.PrimaryScreen.WorkingArea.Height,
+                          PixelFormat.Format32bppArgb))
+                {
+
+                    Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+
+                    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.WorkingArea.X,
+                                                Screen.PrimaryScreen.WorkingArea.Y,
+                                                0,
+                                                0,
+                                                Screen.PrimaryScreen.WorkingArea.Size,
+                                                CopyPixelOperation.SourceCopy);
+
+                    bmpScreenshot.Save("Screenshot.png", ImageFormat.Png);
+                }
+                System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
+                PrintDialog myPrinDialog2 = new PrintDialog();
+                myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
+                myPrinDialog2.Document = myPrintDocument2;
+
+                if (myPrinDialog2.ShowDialog() == DialogResult.OK)
+                {
+                    myPrintDocument2.Print();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex);
+            }
+        }
+
+        private void myPrintDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                //using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                //           Screen.PrimaryScreen.WorkingArea.Height,
+                //           PixelFormat.Format32bppArgb))
+                //{
+
+                //    Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+
+                //    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.WorkingArea.X,
+                //                                Screen.PrimaryScreen.WorkingArea.Y,
+                //                                0,
+                //                                0,
+                //                                Screen.PrimaryScreen.WorkingArea.Size,
+                //                                CopyPixelOperation.SourceCopy);
+                //}
+                //Thread.Sleep(500);
+
+                using (Bitmap myBitmap2 = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                            Screen.PrimaryScreen.WorkingArea.Height,
+                            PixelFormat.Format32bppArgb))
+                {
+                    this.DrawToBitmap(myBitmap2, new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height));
+                    e.Graphics.DrawImage(myBitmap2, 0, 0);
+                    myBitmap2.Save("ScreenShoot.png", ImageFormat.Png);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+        private void lưuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue;
+            using (Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height))
+            {
+                try
+                {
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+                    ImageFormat format = ImageFormat.Png;
+                    if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        string ext = System.IO.Path.GetExtension(sfd.FileName);
+                        switch (ext)
+                        {
+                            case ".jpg":
+                                format = ImageFormat.Jpeg;
+                                break;
+                            case ".bmp":
+                                format = ImageFormat.Bmp;
+                                break;
+                        }
+                        saveImage.Save(sfd.FileName, format);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+            }
+            currentImage.Dispose();
+        }
+
+ 
+
+
+
     }
 
     public class VehicleStandard
