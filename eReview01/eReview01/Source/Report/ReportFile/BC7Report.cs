@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Data;
 using eReview01.Source.Util;
 using eReview01.CommonUI;
+using System.Linq;
+
 
 namespace eReview01.Source.Report.ReportFile
 {
@@ -104,6 +106,18 @@ namespace eReview01.Source.Report.ReportFile
             var X = lblUnitName.Location.X;
             lblStationName.Location = new Point(X, lblStationName.Location.Y);
 
+        }
+
+        private void xrTableCell58_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                xrTableCell58.Text = "Loại xe theo thông tư số " + CommonDictionary.DataSource.tc_option.FirstOrDefault(x => x.OptionID == "TollCirculars").OptionValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
 
     }

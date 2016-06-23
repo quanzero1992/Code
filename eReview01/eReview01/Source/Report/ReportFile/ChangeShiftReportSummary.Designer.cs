@@ -295,6 +295,7 @@
             this.xrLabel25.StylePriority.UseTextAlignment = false;
             this.xrLabel25.Text = "xrLabel25";
             this.xrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel25.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrLabel25_BeforePrint);
             // 
             // TopMargin
             // 
@@ -423,6 +424,7 @@
             this.xrTableCell1.Text = "Loại xe theo Thông tư 122/2015/TT-BTC";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell1.Weight = 1.6027396890518628D;
+            this.xrTableCell1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrTableCell1_BeforePrint);
             // 
             // xrTableCell2
             // 

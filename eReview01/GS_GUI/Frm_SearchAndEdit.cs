@@ -19,6 +19,7 @@ using log4netDatabase;
 using System.Linq;
 using System.Drawing.Imaging;
 using DevExpress.Utils;
+using System.Diagnostics;
 
 namespace eMonitor01
 {
@@ -901,15 +902,46 @@ namespace eMonitor01
 
         private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
-            PrintDialog myPrinDialog2 = new PrintDialog();
-            myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
-            myPrinDialog2.Document = myPrintDocument2;
+            //System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
+            //PrintDialog myPrinDialog2 = new PrintDialog();
+            //myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
+            //myPrinDialog2.Document = myPrintDocument2;
 
-            if (myPrinDialog2.ShowDialog() == DialogResult.OK)
+            //if (myPrinDialog2.ShowDialog() == DialogResult.OK)
+            //{
+            //    myPrintDocument2.Print();
+            //}
+            try
             {
-                myPrintDocument2.Print();
+                 using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                          Screen.PrimaryScreen.WorkingArea.Height,
+                          PixelFormat.Format32bppArgb))
+                {
+
+                    Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+
+                    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.WorkingArea.X,
+                                                Screen.PrimaryScreen.WorkingArea.Y,
+                                                0,
+                                                0,
+                                                Screen.PrimaryScreen.WorkingArea.Size,
+                                                CopyPixelOperation.SourceCopy);
+
+                    bmpScreenshot.Save("Screenshot.png", ImageFormat.Png);
+                }
+
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\Screenshot.png";
+                
+                p.StartInfo.Verb = "Print";
+                p.Start();
             }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+
         }
 
         private void myPrintDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)

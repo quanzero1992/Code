@@ -380,6 +380,7 @@ namespace eMonitor01
         /// <param name="type"></param>
         public void InsertNewStandardVerhicleInfo(string verNumber, int type)
         {
+            if (type < 1) return; // bỏ qua loại xe 0,99 
             cn = GetCon();
             cn.Open();
             MySqlCommand cmd = new MySqlCommand("proc_insertnewstandardiverinfo", cn);

@@ -222,7 +222,7 @@ namespace eReview01.BL
 
         public void GetDetailByMasterID()
         {
-            if (drMasterRow != null)
+            if (drMasterRow != null && strTableDetailName !=null)
             {
                 dsDataSource.Tables[strTableDetailName].Clear();
                 oDLBase.GetDetailByID(dsDataSource, Convert.ToInt32(drMasterRow[strMasterPrimarykey].ToString()), TableDetailName, strMasterPrimarykey);

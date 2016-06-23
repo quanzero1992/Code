@@ -462,5 +462,10 @@ namespace eReview01.Source.Review
             if (string.IsNullOrEmpty(lblVehNumber.Text.Trim())) OldVehNumber = "";
             else OldVehNumber = lblVehNumber.Text;
         }
+
+        protected override void RefreshToolbar()
+        {
+            //base.RefreshToolbar();
+        }
     }
 }

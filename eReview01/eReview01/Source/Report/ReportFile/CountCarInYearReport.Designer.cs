@@ -566,6 +566,7 @@
             this.xrTableCell58.Text = "Loại xe theo Thông tư 122/2015/TT-BTC";
             this.xrTableCell58.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell58.Weight = 0.36986299870550149D;
+            this.xrTableCell58.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrTableCell58_BeforePrint);
             // 
             // xrTableCell59
             // 

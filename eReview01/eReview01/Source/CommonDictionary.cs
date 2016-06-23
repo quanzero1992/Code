@@ -28,6 +28,9 @@ namespace eReview01.Source
 
                     oBL.TableMasterName = DataSource.tc_option.TableName;
                     oBL.GetAllData();
+
+                    oBL.TableMasterName = DataSource.ticket_type.TableName;
+                    oBL.GetAllData();
                 }
                 
             }

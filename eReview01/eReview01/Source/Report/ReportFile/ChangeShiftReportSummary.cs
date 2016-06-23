@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Data;
 using eReview01.Source.Util;
 using eReview01.CommonUI;
+using System.Linq;
 
 namespace eReview01.Source.Report.ReportFile
 {
@@ -125,6 +126,36 @@ namespace eReview01.Source.Report.ReportFile
             var X = lblUnitName.Location.X;
             lblStationName.Location = new Point(X, lblStationName.Location.Y);
 
+        }
+
+
+        private void xrTableCell1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                xrTableCell1.Text = "Loại xe theo thông tư " + CommonDictionary.DataSource.tc_option.FirstOrDefault(x => x.OptionID == "TollCirculars").OptionValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
+        }
+
+        private void xrLabel25_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            try
+            {
+                var drv = (DataRowView)GetCurrentRow();
+                if (drv != null)
+                {
+                    var vehType = drv[datasetReport1.ChangeShiftUserInfo.VehTypeIDColumn.ColumnName].ConvertToInt();
+                    xrLabel25.Text = CommonDictionary.DataSource.ticket_type.FirstOrDefault(x => x.TICK_TYPE_ID == vehType).TICK_TYPE_FEE.ToString("0,0");
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
 
     }

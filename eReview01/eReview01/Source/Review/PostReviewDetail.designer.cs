@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostReviewDetail));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblLane = new DevExpress.XtraEditors.LabelControl();
             this.lblTransBegin = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.lblVehNumber = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -58,7 +57,7 @@
             this.txtVehNumberUpdate = new eReview01.CDControl.CDTextEdit();
             this.gcHistory = new DevExpress.XtraEditors.GroupControl();
             this.mDevXGrid1 = new eReview01.CDControl.CDGrid();
-            this.bsTransaction = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTransaction = new System.Windows.Forms.BindingSource();
             this.dsReview = new eReview01.Entities.DatasetReview();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTRANS_BEGIN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +65,7 @@
             this.colTRANS_BARCODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRANS_TC_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rileTC_Type = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.bsTCType = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTCType = new System.Windows.Forms.BindingSource();
             this.colTRANS_FEE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.lblVehRegDate = new DevExpress.XtraEditors.LabelControl();
@@ -81,7 +80,7 @@
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.lblVehRegLoad = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.bsLaneInfo = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLaneInfo = new System.Windows.Forms.BindingSource();
             this.mDevXGroupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.btnVideo = new eReview01.CDControl.CDButton();

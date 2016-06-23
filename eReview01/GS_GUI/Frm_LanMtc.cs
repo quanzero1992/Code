@@ -22,6 +22,7 @@ using log4netDatabase;
 using System.Linq;
 using DevExpress.Utils;
 using System.Drawing.Imaging;
+using System.Diagnostics;
 
 
 namespace eMonitor01
@@ -184,6 +185,7 @@ namespace eMonitor01
 
         private void frm_lanmtc_Load(object sender, EventArgs e)
         {
+           
             Data_soatveMTC.EmbeddedNavigator.TextStringFormat = "Bản ghi {0} / {1}";
             try
             {
@@ -1318,13 +1320,15 @@ namespace eMonitor01
         {
             try
             {
+                resetStandardVehicle();
                 if (string.IsNullOrEmpty(VehNum)) return;
                 lblWarmning.Visible = false;
-                resetStandardVehicle();
                 ConnectDb cn = new ConnectDb();
                 DataTable dt = cn.GetStandardVerhicleInfo(VehNum);
+              
                 if ( dt.Rows.Count >0)
                 {
+                    if (dt.Rows[0]["Type"].ConvertToInt() < 1) return;
                     lblWarmning.Visible = true;
                     lblStandard_VehNum.Text = VehNum;
                     lblStandard_VehType.Text = dt.Rows[0]["Type"].ToString();
@@ -1365,41 +1369,7 @@ namespace eMonitor01
             lblStandard_VehType.Text = "";
             lblWarmning.Text = "";
         }
-
-        float zoomSpeedFactor = 0.1f;
-        private void Pic_Mtc_Properties_MouseWheel(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                Console.WriteLine(e.Delta);
-                if (e.Delta > 0 && Pic_Mtc.Properties.ZoomPercent < 500)
-                {
-                    Pic_Mtc.Properties.ZoomPercent += 50;
-                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-                }
-                else if (e.Delta < 0 && Pic_Mtc.Properties.ZoomPercent >= 150)
-                {
-                    Pic_Mtc.Properties.ZoomPercent -= 50;
-                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-                }
-                else
-                    return;
-                //else
-                //{
-                //    Pic_Mtc.Properties.ZoomPercent += 100;
-                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-                //}
-
-                //int i = Math.Min(100, Math.Min((Pic_Mtc.Width - 12) * 100 / Pic_Mtc.Image.Width,
-                //                      (Pic_Mtc.Height - 2) * 100 / Pic_Mtc.Image.Height));
-                //Pic_Mtc.Properties.ZoomPercent = i;
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
+                
         private void mc_Image_Opening(object sender, CancelEventArgs e)
         {
 
@@ -1473,15 +1443,22 @@ namespace eMonitor01
 
                     bmpScreenshot.Save("Screenshot.png", ImageFormat.Png);
                 }
-                System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
-                PrintDialog myPrinDialog2 = new PrintDialog();
-                myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
-                myPrinDialog2.Document = myPrintDocument2;
 
-                if (myPrinDialog2.ShowDialog() == DialogResult.OK)
-                {
-                    myPrintDocument2.Print();
-                }
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\Screenshot.png";
+                
+                p.StartInfo.Verb = "Print";
+                p.Start();
+
+                //System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
+                //PrintDialog myPrinDialog2 = new PrintDialog();
+                //myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
+                //myPrinDialog2.Document = myPrintDocument2;
+
+                //if (myPrinDialog2.ShowDialog() == DialogResult.OK)
+                //{
+                //    myPrintDocument2.Print();
+                //}
             }
             catch (Exception ex)
             {
@@ -1559,10 +1536,32 @@ namespace eMonitor01
             currentImage.Dispose();
         }
 
- 
+        #region Zoom Image
+     
 
+        private void Pic_Mtc_Properties_MouseWheel(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Console.WriteLine(e.Delta);
+                //if (e.Delta > 0 && Pic_Mtc.Properties.ZoomPercent < 500)
+                //{
+                //    Pic_Mtc.Properties.ZoomPercent += 50;
+                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                //}
+                //else if (e.Delta < 0 && Pic_Mtc.Properties.ZoomPercent >= 150)
+                //{
+                //    Pic_Mtc.Properties.ZoomPercent -= 50;
+                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                //}
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
 
+        #endregion
     }
 
     public class VehicleStandard

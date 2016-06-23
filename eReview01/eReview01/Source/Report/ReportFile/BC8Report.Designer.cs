@@ -729,6 +729,7 @@
             this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "Loại xe theo Thông tư 122/2015/TT-BTC";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrLabel7.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.xrLabel7_BeforePrint);
             // 
             // xrLabel6
             // 
