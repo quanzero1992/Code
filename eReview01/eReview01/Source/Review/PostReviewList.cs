@@ -20,6 +20,7 @@ using DevExpress.XtraEditors;
 using log4netDatabase;
 using DevExpress.Utils;
 using System.Linq;
+using System.Drawing.Imaging;
 
 namespace eReview01.Source.Review
 {
@@ -980,6 +981,101 @@ namespace eReview01.Source.Review
         private void gcReview_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lưuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (Bitmap currentImage = (Bitmap)pePhoto.EditValue)
+            {
+                using (Bitmap saveImage = new Bitmap(currentImage, pePhoto.ClientSize.Width, pePhoto.ClientSize.Height))
+                {
+                    try
+                    {
+                        SaveFileDialog sfd = new SaveFileDialog();
+                        sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+                        ImageFormat format = ImageFormat.Png;
+                        if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            string ext = System.IO.Path.GetExtension(sfd.FileName);
+                            switch (ext)
+                            {
+                                case ".jpg":
+                                    format = ImageFormat.Jpeg;
+                                    break;
+                                case ".bmp":
+                                    format = ImageFormat.Bmp;
+                                    break;
+                            }
+                            saveImage.Save(sfd.FileName, format);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error(ex);
+                    }
+                }
+            }
+        }
+
+        private void inToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Bitmap currentImage = (Bitmap)pePhoto.EditValue)
+                {
+                    using (Bitmap saveImage = new Bitmap(currentImage, pePhoto.ClientSize.Width, pePhoto.ClientSize.Height))
+                    {
+                        saveImage.Save("HK_Image.png");
+                    }
+                }
+
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\HK_Image.png";
+
+                p.StartInfo.Verb = "Print";
+                p.Start();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex);
+            }
+        }
+
+        private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
+                          Screen.PrimaryScreen.WorkingArea.Height,
+                          PixelFormat.Format32bppArgb))
+                {
+
+                    Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
+
+
+                    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.WorkingArea.X,
+                                                Screen.PrimaryScreen.WorkingArea.Y,
+                                                0,
+                                                0,
+                                                Screen.PrimaryScreen.WorkingArea.Size,
+                                                CopyPixelOperation.SourceCopy);
+
+                    bmpScreenshot.Save("HK_Screenshot.png", ImageFormat.Png);
+                }
+
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\HK_Screenshot.png";
+
+                p.StartInfo.Verb = "Print";
+                p.Start();
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex);
+            }
         }
 
     }

@@ -285,11 +285,11 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(4, 146);
+            this.simpleButton1.Location = new System.Drawing.Point(5, 153);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(28, 28);
+            this.simpleButton1.Size = new System.Drawing.Size(33, 20);
             this.simpleButton1.TabIndex = 101;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -438,7 +438,6 @@
             this.lbl_ThuPhiVien.Name = "lbl_ThuPhiVien";
             this.lbl_ThuPhiVien.Size = new System.Drawing.Size(173, 16);
             this.lbl_ThuPhiVien.TabIndex = 97;
-            this.lbl_ThuPhiVien.Click += new System.EventHandler(this.lbl_ThuPhiVien_Click);
             // 
             // labelControl8
             // 
@@ -521,11 +520,11 @@
             this.pic_ImgBs.Location = new System.Drawing.Point(2, 2);
             this.pic_ImgBs.Name = "pic_ImgBs";
             this.pic_ImgBs.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.pic_ImgBs.Properties.AllowScrollViaMouseDrag = false;
+            this.pic_ImgBs.Properties.AllowScrollViaMouseDrag = true;
             this.pic_ImgBs.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.pic_ImgBs.Properties.ContextMenuStrip = this.mc_Image;
             this.pic_ImgBs.Properties.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pic_ImgBs.Properties.ErrorImage")));
-            this.pic_ImgBs.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pic_ImgBs.Properties.ZoomPercent = 85D;
             this.pic_ImgBs.Properties.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pic_ImgBs_Properties_MouseWheel);
             this.pic_ImgBs.Size = new System.Drawing.Size(230, 173);
             this.pic_ImgBs.TabIndex = 0;
@@ -961,7 +960,7 @@
             this.pic_BsDetail.Location = new System.Drawing.Point(625, 316);
             this.pic_BsDetail.Name = "pic_BsDetail";
             this.pic_BsDetail.Properties.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pic_BsDetail.Properties.ErrorImage")));
-            this.pic_BsDetail.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pic_BsDetail.Properties.ZoomPercent = 85D;
             this.pic_BsDetail.Size = new System.Drawing.Size(100, 96);
             this.pic_BsDetail.TabIndex = 7;
             this.pic_BsDetail.Visible = false;

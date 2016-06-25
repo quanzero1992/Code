@@ -41,6 +41,7 @@ namespace eMonitor01
             Localizer.Active = new MyXtraMessage();
             t.Abort();
             Cursor.Current = Cursors.Default;
+         
         }
 
         DataTable dt;
@@ -455,16 +456,18 @@ namespace eMonitor01
                 //lbl_loaixe.Text = grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "MoTaLoaiXe").ToString();
                 lbl_loaixe.Text = dictionaryVehType(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "MoTaLoaiXe").ToString().ConvertToInt());
                 var imgPath = grid_Mtc.GetRowCellValue(dong, "HinhAnh").ToString();
+                //Pic_Mtc.Properties.ZoomPercent = 85;
                 if (!string.IsNullOrEmpty(imgPath))
                 {
-                    Pic_Mtc.Properties.SizeMode = PictureSizeMode.Zoom;
+                    //Pic_Mtc.Properties.SizeMode = PictureSizeMode.Zoom;
                     Pic_Mtc.LoadAsync(@imgPath);
                 }
                 else
                 {
-                    Pic_Mtc.Properties.SizeMode = PictureSizeMode.Clip;
+                    //Pic_Mtc.Properties.SizeMode = PictureSizeMode.Clip;
                     Pic_Mtc.Image = (Image)Properties.Resources.ImageEmpty;
                 }
+               
                 if (grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == null || (int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 0)
                 {
                     //lbl_CaptionGoiYLoi.ForeColor = Color.Green;
@@ -485,7 +488,7 @@ namespace eMonitor01
                 }
                 int LuotThangQuy = string.IsNullOrEmpty(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ToString()) ? 0 : grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "LuotThangQuy").ConvertToInt();
                 LoadStandardVehicle(grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "BienSo").ToString(), grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "Phi").ConvertToInt(), LuotThangQuy);
-                Pic_Mtc.Properties.ZoomPercent = 100;
+                Pic_Mtc.Properties.ZoomPercent = 85;
                 //XuLyBanGhiDaXem();
             }
             catch (Exception ex)
@@ -1143,14 +1146,15 @@ namespace eMonitor01
                     var imgPath = grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "HinhAnh").ToString();
                     if (!string.IsNullOrEmpty(imgPath))
                     {
-                        Pic_Mtc.Properties.SizeMode = PictureSizeMode.Zoom;
+                        //Pic_Mtc.Properties.SizeMode = PictureSizeMode.Zoom;
                         Pic_Mtc.LoadAsync(@imgPath);
                     }
                     else
                     {
-                        Pic_Mtc.Properties.SizeMode = PictureSizeMode.Clip;
+                        //Pic_Mtc.Properties.SizeMode = PictureSizeMode.Clip;
                         Pic_Mtc.Image = (Image)Properties.Resources.ImageEmpty;
                     }
+                    Pic_Mtc.Properties.ZoomPercent = 85;
                     if (grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == null || (int)grid_Mtc.GetRowCellValue(grid_Mtc.FocusedRowHandle, "GoiYLoi") == 0)
                     {
                         lbl_GoiYLoi.ForeColor = Color.Green;
@@ -1378,49 +1382,28 @@ namespace eMonitor01
         private void inToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
-            {
-                System.Drawing.Printing.PrintDocument myPrintDocument1 = new System.Drawing.Printing.PrintDocument();
-                PrintDialog myPrinDialog1 = new PrintDialog();
-                myPrintDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument2_PrintPage);
-                myPrinDialog1.Document = myPrintDocument1;
-
-                if (myPrinDialog1.ShowDialog() == DialogResult.OK)
+            {                
+                using (Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue)
                 {
-                    myPrintDocument1.Print();
+                    using (Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height))
+                    {
+                        saveImage.Save("M_Image.png");
+                    }
                 }
+
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\M_Image.png";
+
+                p.StartInfo.Verb = "Print";
+                p.Start();
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 logger.Error(ex);
             }
-        }
-
-        private void myPrintDocument2_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
             
-            Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue;
-            Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height);
-            try
-            {
-                saveImage.Save("Image.jpg");
-
-                //Bitmap myBitmap1 = new Bitmap(Pic_Mtc.Width, Pic_Mtc.Height);
-                //Pic_Mtc.DrawToBitmap(myBitmap1, new Rectangle(0, 0, Pic_Mtc.Width, Pic_Mtc.Height));
-                //e.Graphics.DrawImage(myBitmap1, 0, 0);
-                //myBitmap1.Dispose();
-                e.Graphics.DrawImage(saveImage, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-            finally
-            {
-                currentImage.Dispose();
-                saveImage.Dispose();
-            }
-        }
+        }               
 
         private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1441,99 +1424,55 @@ namespace eMonitor01
                                                 Screen.PrimaryScreen.WorkingArea.Size,
                                                 CopyPixelOperation.SourceCopy);
 
-                    bmpScreenshot.Save("Screenshot.png", ImageFormat.Png);
+                    bmpScreenshot.Save("M_Screenshot.png", ImageFormat.Png);
                 }
 
                 var p = new Process();
-                p.StartInfo.FileName = Application.StartupPath + "\\Screenshot.png";
+                p.StartInfo.FileName = Application.StartupPath + "\\M_Screenshot.png";
                 
                 p.StartInfo.Verb = "Print";
                 p.Start();
 
-                //System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
-                //PrintDialog myPrinDialog2 = new PrintDialog();
-                //myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
-                //myPrinDialog2.Document = myPrintDocument2;
-
-                //if (myPrinDialog2.ShowDialog() == DialogResult.OK)
-                //{
-                //    myPrintDocument2.Print();
-                //}
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in","Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 logger.Error(ex);
             }
-        }
-
-        private void myPrintDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            try
-            {
-                //using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
-                //           Screen.PrimaryScreen.WorkingArea.Height,
-                //           PixelFormat.Format32bppArgb))
-                //{
-
-                //    Graphics gfxScreenshot = Graphics.FromImage(bmpScreenshot);
-
-
-                //    gfxScreenshot.CopyFromScreen(Screen.PrimaryScreen.WorkingArea.X,
-                //                                Screen.PrimaryScreen.WorkingArea.Y,
-                //                                0,
-                //                                0,
-                //                                Screen.PrimaryScreen.WorkingArea.Size,
-                //                                CopyPixelOperation.SourceCopy);
-                //}
-                //Thread.Sleep(500);
-
-                using (Bitmap myBitmap2 = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
-                            Screen.PrimaryScreen.WorkingArea.Height,
-                            PixelFormat.Format32bppArgb))
-                {
-                    this.DrawToBitmap(myBitmap2, new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height));
-                    e.Graphics.DrawImage(myBitmap2, 0, 0);
-                    myBitmap2.Save("ScreenShoot.png", ImageFormat.Png);
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
-        }
+        }             
 
         private void lưuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue;
-            using (Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height))
+            using (Bitmap currentImage = (Bitmap)Pic_Mtc.EditValue)
             {
-                try
+                using (Bitmap saveImage = new Bitmap(currentImage, Pic_Mtc.ClientSize.Width, Pic_Mtc.ClientSize.Height))
                 {
-                    SaveFileDialog sfd = new SaveFileDialog();
-                    sfd.Filter = "Images|*.png;*.bmp;*.jpg";
-                    ImageFormat format = ImageFormat.Png;
-                    if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    try
                     {
-                        string ext = System.IO.Path.GetExtension(sfd.FileName);
-                        switch (ext)
+                        SaveFileDialog sfd = new SaveFileDialog();
+                        sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+                        ImageFormat format = ImageFormat.Png;
+                        if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-                            case ".jpg":
-                                format = ImageFormat.Jpeg;
-                                break;
-                            case ".bmp":
-                                format = ImageFormat.Bmp;
-                                break;
+                            string ext = System.IO.Path.GetExtension(sfd.FileName);
+                            switch (ext)
+                            {
+                                case ".jpg":
+                                    format = ImageFormat.Jpeg;
+                                    break;
+                                case ".bmp":
+                                    format = ImageFormat.Bmp;
+                                    break;
+                            }
+                            saveImage.Save(sfd.FileName, format);
                         }
-                        saveImage.Save(sfd.FileName, format);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.Error(ex);
                     }
                 }
-                catch (Exception ex)
-                {
-                    logger.Error(ex);
-                }
             }
-            currentImage.Dispose();
         }
 
         #region Zoom Image
@@ -1544,16 +1483,16 @@ namespace eMonitor01
             try
             {
                 Console.WriteLine(e.Delta);
-                //if (e.Delta > 0 && Pic_Mtc.Properties.ZoomPercent < 500)
-                //{
-                //    Pic_Mtc.Properties.ZoomPercent += 50;
-                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-                //}
-                //else if (e.Delta < 0 && Pic_Mtc.Properties.ZoomPercent >= 150)
-                //{
-                //    Pic_Mtc.Properties.ZoomPercent -= 50;
-                //    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
-                //}
+                if (e.Delta > 0 && Pic_Mtc.Properties.ZoomPercent < 500)
+                {
+                    Pic_Mtc.Properties.ZoomPercent += 50;
+                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
+                else if (e.Delta < 0 && Pic_Mtc.Properties.ZoomPercent >= 135)
+                {
+                    Pic_Mtc.Properties.ZoomPercent -= 50;
+                    DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
             }
             catch (Exception ex)
             {

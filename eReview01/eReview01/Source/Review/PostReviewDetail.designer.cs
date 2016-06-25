@@ -84,6 +84,11 @@
             this.mDevXGroupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lblError = new DevExpress.XtraEditors.LabelControl();
             this.btnVideo = new eReview01.CDControl.CDButton();
+            this.mc_Image = new System.Windows.Forms.ContextMenuStrip();
+            this.lưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inMànHìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -104,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsLaneInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDevXGroupControl1)).BeginInit();
             this.mDevXGroupControl1.SuspendLayout();
+            this.mc_Image.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -345,6 +351,7 @@
             // 
             this.pictureEdit1.Location = new System.Drawing.Point(8, 56);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ContextMenuStrip = this.mc_Image;
             this.pictureEdit1.Properties.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.ErrorImage")));
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(528, 408);
@@ -713,6 +720,45 @@
             this.btnVideo.Text = "Video playback";
             this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
             // 
+            // mc_Image
+            // 
+            this.mc_Image.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lưuToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.inToolStripMenuItem,
+            this.inMànHìnhToolStripMenuItem});
+            this.mc_Image.Name = "mc_Image";
+            this.mc_Image.Size = new System.Drawing.Size(139, 76);
+            // 
+            // lưuToolStripMenuItem
+            // 
+            this.lưuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuToolStripMenuItem.Image")));
+            this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.lưuToolStripMenuItem.Text = "Lưu";
+            this.lưuToolStripMenuItem.Click += new System.EventHandler(this.lưuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(135, 6);
+            // 
+            // inToolStripMenuItem
+            // 
+            this.inToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inToolStripMenuItem.Image")));
+            this.inToolStripMenuItem.Name = "inToolStripMenuItem";
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inToolStripMenuItem.Text = "In ảnh";
+            this.inToolStripMenuItem.Click += new System.EventHandler(this.inToolStripMenuItem_Click);
+            // 
+            // inMànHìnhToolStripMenuItem
+            // 
+            this.inMànHìnhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inMànHìnhToolStripMenuItem.Image")));
+            this.inMànHìnhToolStripMenuItem.Name = "inMànHìnhToolStripMenuItem";
+            this.inMànHìnhToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.inMànHìnhToolStripMenuItem.Text = "In màn hình";
+            this.inMànHìnhToolStripMenuItem.Click += new System.EventHandler(this.inMànHìnhToolStripMenuItem_Click);
+            // 
             // PostReviewDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +816,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsLaneInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mDevXGroupControl1)).EndInit();
             this.mDevXGroupControl1.ResumeLayout(false);
+            this.mc_Image.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -831,5 +878,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         public CDControl.CDTextEdit txtVehNumberUpdate;
         public DevExpress.XtraEditors.GroupControl gcHistory;
+        private System.Windows.Forms.ContextMenuStrip mc_Image;
+        private System.Windows.Forms.ToolStripMenuItem lưuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem inToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inMànHìnhToolStripMenuItem;
     }
 }

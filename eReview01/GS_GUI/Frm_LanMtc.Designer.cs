@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_LanMtc));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -63,7 +64,7 @@
             this.btn_previous = new System.Windows.Forms.Button();
             this.btn_run = new DevExpress.XtraEditors.SimpleButton();
             this.Pic_Mtc = new DevExpress.XtraEditors.PictureEdit();
-            this.mc_Image = new System.Windows.Forms.ContextMenuStrip();
+            this.mc_Image = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -133,10 +134,10 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lbl_GoiYLoi = new DevExpress.XtraEditors.LabelControl();
-            this.timer_autoloaddt = new System.Windows.Forms.Timer();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource();
-            this.timer_loaddb = new System.Windows.Forms.Timer();
-            this.timer_LoadOldDb = new System.Windows.Forms.Timer();
+            this.timer_autoloaddt = new System.Windows.Forms.Timer(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timer_loaddb = new System.Windows.Forms.Timer(this.components);
+            this.timer_LoadOldDb = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -304,12 +305,13 @@
             this.Pic_Mtc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pic_Mtc.Location = new System.Drawing.Point(0, 0);
             this.Pic_Mtc.Name = "Pic_Mtc";
+            this.Pic_Mtc.Properties.AllowScrollViaMouseDrag = true;
             this.Pic_Mtc.Properties.AppearanceDisabled.BackColor = System.Drawing.Color.LightBlue;
             this.Pic_Mtc.Properties.AppearanceDisabled.Options.UseBackColor = true;
             this.Pic_Mtc.Properties.ContextMenuStrip = this.mc_Image;
             this.Pic_Mtc.Properties.ErrorImage = null;
             this.Pic_Mtc.Properties.ShowZoomSubMenu = DevExpress.Utils.DefaultBoolean.True;
-            this.Pic_Mtc.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.Pic_Mtc.Properties.ZoomPercent = 85D;
             this.Pic_Mtc.Properties.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.Pic_Mtc_Properties_MouseWheel);
             this.Pic_Mtc.Size = new System.Drawing.Size(892, 461);
             this.Pic_Mtc.TabIndex = 95;

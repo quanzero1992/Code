@@ -33,7 +33,6 @@ namespace eMonitor01
             InitializeComponent();
             //t.Abort();
             Cursor.Current = Cursors.Default;
-            pic_ImgBs.MouseWheel += pic_ImgBs_MouseWheel;
         }
 
       
@@ -671,6 +670,7 @@ namespace eMonitor01
             try
             {
                 LoadDb();
+                Thread.Sleep(1000);
             }
             catch (Exception ex)
             {
@@ -700,6 +700,7 @@ namespace eMonitor01
                         path = @grd_HistoryGs.GetRowCellValue(grd_HistoryGs.FocusedRowHandle, "HinhAnh").ToString();
                         lbl_KqGs.Text = grd_HistoryGs.GetRowCellDisplayText(grd_HistoryGs.FocusedRowHandle, "MaLoi").ToString();
                         pic_BsDetail.LoadAsync(path);
+                      
                         if (LocLoi == 102)
                         {
                             lbl_MaNVGS.Text = "";
@@ -745,6 +746,8 @@ namespace eMonitor01
                     lbl_KqGs.Text = "";
                     pic_ImgBs.LoadAsync("");
                 }
+                pic_BsDetail.Properties.ZoomPercent = 80;
+                pic_ImgBs.Properties.ZoomPercent = 28;
 
             }
             catch (Exception ex)
@@ -860,11 +863,6 @@ namespace eMonitor01
             frm.ShowDialog();
         }
 
-        private void lbl_ThuPhiVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lưuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Bitmap currentImage = (Bitmap)pic_BsDetail.EditValue;
@@ -901,16 +899,7 @@ namespace eMonitor01
         }
 
         private void inMànHìnhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //System.Drawing.Printing.PrintDocument myPrintDocument2 = new System.Drawing.Printing.PrintDocument();
-            //PrintDialog myPrinDialog2 = new PrintDialog();
-            //myPrintDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument1_PrintPage);
-            //myPrinDialog2.Document = myPrintDocument2;
-
-            //if (myPrinDialog2.ShowDialog() == DialogResult.OK)
-            //{
-            //    myPrintDocument2.Print();
-            //}
+        {           
             try
             {
                  using (Bitmap bmpScreenshot = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
@@ -928,11 +917,11 @@ namespace eMonitor01
                                                 Screen.PrimaryScreen.WorkingArea.Size,
                                                 CopyPixelOperation.SourceCopy);
 
-                    bmpScreenshot.Save("Screenshot.png", ImageFormat.Png);
+                    bmpScreenshot.Save("H_Screenshot.png", ImageFormat.Png);
                 }
 
                 var p = new Process();
-                p.StartInfo.FileName = Application.StartupPath + "\\Screenshot.png";
+                p.StartInfo.FileName = Application.StartupPath + "\\H_Screenshot.png";
                 
                 p.StartInfo.Verb = "Print";
                 p.Start();
@@ -943,67 +932,50 @@ namespace eMonitor01
             }
 
         }
-
-        private void myPrintDocument1_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            using (Bitmap myBitmap2 = new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,
-                           Screen.PrimaryScreen.WorkingArea.Height,
-                           PixelFormat.Format32bppArgb))
-            {
-                this.DrawToBitmap(myBitmap2, new Rectangle(0, 0, Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height));
-                e.Graphics.DrawImage(myBitmap2, 0, 0);
-                myBitmap2.Save("ScreenShoot.png",ImageFormat.Png);
-            }
-        }
-
+                
         private void inToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Drawing.Printing.PrintDocument myPrintDocument1 = new System.Drawing.Printing.PrintDocument();
-            PrintDialog myPrinDialog1 = new PrintDialog();
-            myPrintDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(myPrintDocument2_PrintPage);
-            myPrinDialog1.Document = myPrintDocument1;
-
-            if (myPrinDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                myPrintDocument1.Print();
+                using (Bitmap currentImage = (Bitmap)pic_BsDetail.EditValue)
+                {
+                    using (Bitmap saveImage = new Bitmap(currentImage, pic_BsDetail.ClientSize.Width, pic_BsDetail.ClientSize.Height))
+                    {
+                        saveImage.Save("H_Image.png");
+                    }
+                }
+
+                var p = new Process();
+                p.StartInfo.FileName = Application.StartupPath + "\\H_Image.png";
+
+                p.StartInfo.Verb = "Print";
+                p.Start();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Vui lòng kiểm tra lại địa chỉ máy in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.Error(ex);
             }
         }
 
-        private void myPrintDocument2_PrintPage(System.Object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Bitmap currentImage = (Bitmap)pic_BsDetail.EditValue;
-            using (Bitmap saveImage = new Bitmap(currentImage, pic_BsDetail.ClientSize.Width, pic_BsDetail.ClientSize.Height))
-            {
-                saveImage.Save("Image.png",ImageFormat.Png);
-                e.Graphics.DrawImage(saveImage, 0, 0);
-            }
-            currentImage.Dispose();
-        }
-
-        float zoomSpeedFactor = 0.1f;
         private void pic_ImgBs_Properties_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (e.Delta > 0 && pic_ImgBs.Properties.ZoomPercent < 500)
+            if (e.Delta > 0 && pic_ImgBs.Properties.ZoomPercent <= 108)
             {
-                pic_ImgBs.Properties.ZoomPercent += 50;
-                pic_BsDetail.Properties.ZoomPercent += 50;
+                pic_ImgBs.Properties.ZoomPercent += 14;
+                pic_BsDetail.Properties.ZoomPercent += 40;
                 DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
-            else if (e.Delta < 0 && pic_ImgBs.Properties.ZoomPercent >= 150)
+            else if (e.Delta < 0 && pic_ImgBs.Properties.ZoomPercent >= 42)
             {
-                pic_ImgBs.Properties.ZoomPercent -= 50;
-                pic_BsDetail.Properties.ZoomPercent -= 50;
+                pic_ImgBs.Properties.ZoomPercent -= 14;
+                pic_BsDetail.Properties.ZoomPercent -= 40;
                 DXMouseEventArgs.GetMouseArgs(e).Handled = true;
             }
             else
                 return;
         }
 
-        private void pic_ImgBs_MouseWheel(object sender, MouseEventArgs e)
-        {
-            
-        }
-        
     }
 
     public class MyFindControl : FindControl

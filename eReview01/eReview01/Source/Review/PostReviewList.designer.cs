@@ -28,50 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostReviewList));
             this.dsReview = new eReview01.Entities.DatasetReview();
-            this.bsReview = new System.Windows.Forms.BindingSource(this.components);
+            this.bsReview = new System.Windows.Forms.BindingSource();
             this.gcReview = new eReview01.CDControl.CDGrid();
             this.gvReview = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIndex = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRANS_TC_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rileTCType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.bsTC_TYPE = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTC_TYPE = new System.Windows.Forms.BindingSource();
             this.colTRANS_BARCODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRANS_BEGIN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLANE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRANS_VEH_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rileVEH_TYPE = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.bsVEH_TYPE = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVEH_TYPE = new System.Windows.Forms.BindingSource();
             this.colTRANS_FEE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRANS_VEH_NUMBER = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUSERNAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rigleUser = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.bsUSER_INFO = new System.Windows.Forms.BindingSource(this.components);
+            this.bsUSER_INFO = new System.Windows.Forms.BindingSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rileShiftType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.bsShiftType = new System.Windows.Forms.BindingSource(this.components);
+            this.bsShiftType = new System.Windows.Forms.BindingSource();
             this.colTRANS_END = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rileErrorType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.bsErrorType = new System.Windows.Forms.BindingSource(this.components);
+            this.bsErrorType = new System.Windows.Forms.BindingSource();
             this.mDevXGroupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbl_Note = new DevExpress.XtraEditors.LabelControl();
             this.checkEditSuspect = new DevExpress.XtraEditors.CheckEdit();
             this.errorTcType = new eReview01.CDControl.CDLookUpEnum();
             this.mDevXLabel2 = new eReview01.CDControl.CDLabel();
             this.glueUser = new eReview01.CDControl.CDGridLookUpEdit();
-            this.bsUserTicket = new System.Windows.Forms.BindingSource(this.components);
+            this.bsUserTicket = new System.Windows.Forms.BindingSource();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUSER_INFO_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUSER_INFO_FULL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,10 +78,10 @@
             this.mDevXLabel5 = new eReview01.CDControl.CDLabel();
             this.lueTcType = new eReview01.CDControl.CDLookUpEnum();
             this.lueTicketType = new eReview01.CDControl.CDLookUpEnum();
-            this.bsTICKET_TYPE = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTICKET_TYPE = new System.Windows.Forms.BindingSource();
             this.lueVehType = new eReview01.CDControl.CDLookUpEnum();
             this.lueLane = new eReview01.CDControl.CDLookUpEnum();
-            this.bsLaneInfo = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLaneInfo = new System.Windows.Forms.BindingSource();
             this.mDevXLabel7 = new eReview01.CDControl.CDLabel();
             this.mDevXLabel1 = new eReview01.CDControl.CDLabel();
             this.btnExport = new eReview01.CDControl.CDButton();
@@ -98,7 +97,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bsLANE_TYPE = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLANE_TYPE = new System.Windows.Forms.BindingSource();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -137,8 +136,13 @@
             this.pePhoto = new DevExpress.XtraEditors.PictureEdit();
             this.peZoomPhoto = new DevExpress.XtraEditors.PictureEdit();
             this.pePlayVideo = new DevExpress.XtraEditors.PictureEdit();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bsTicketBill = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.bsTicketBill = new System.Windows.Forms.BindingSource();
+            this.mc_Image = new System.Windows.Forms.ContextMenuStrip();
+            this.lưuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.inToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inMànHìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dsReview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsReview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcReview)).BeginInit();
@@ -178,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.peZoomPhoto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pePlayVideo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTicketBill)).BeginInit();
+            this.mc_Image.SuspendLayout();
             this.SuspendLayout();
             // 
             // dsReview
@@ -588,7 +593,7 @@
             this.errorTcType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.errorTcType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", "Delete", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", "Delete", null, true)});
             this.errorTcType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ERR_TYPE_NAME", "Loại lỗi", 5, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.errorTcType.Properties.DataSource = this.bsErrorType;
@@ -695,7 +700,7 @@
             this.lueTcType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.lueTcType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", "Delete", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", "Delete", null, true)});
             this.lueTcType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TC_TYPE_NAME", "Loại thu phí")});
             this.lueTcType.Properties.DataSource = this.bsTC_TYPE;
@@ -718,7 +723,7 @@
             this.lueTicketType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.lueTicketType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", "Delete", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", "Delete", null, true)});
             this.lueTicketType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TICK_TYPE_NAME", "Loại vé")});
             this.lueTicketType.Properties.DataSource = this.bsTICKET_TYPE;
@@ -746,7 +751,7 @@
             this.lueVehType.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.lueVehType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", "Delete", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", "Delete", null, true)});
             this.lueVehType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("VEH_TYPE_NAME", "Loại xe")});
             this.lueVehType.Properties.DataSource = this.bsVEH_TYPE;
@@ -769,7 +774,7 @@
             this.lueLane.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.lueLane.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", "Delete", null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", "Delete", null, true)});
             this.lueLane.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("LANE_INFO_NUMBER", "Làn")});
             this.lueLane.Properties.DataSource = this.bsLaneInfo;
@@ -1313,8 +1318,8 @@
             this.pePhoto.Location = new System.Drawing.Point(8, 544);
             this.pePhoto.Name = "pePhoto";
             this.pePhoto.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.pePhoto.Properties.AllowScrollViaMouseDrag = false;
             this.pePhoto.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
+            this.pePhoto.Properties.ContextMenuStrip = this.mc_Image;
             this.pePhoto.Properties.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pePhoto.Properties.ErrorImage")));
             this.pePhoto.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pePhoto.Size = new System.Drawing.Size(256, 177);
@@ -1327,7 +1332,6 @@
             this.peZoomPhoto.Location = new System.Drawing.Point(184, 552);
             this.peZoomPhoto.Name = "peZoomPhoto";
             this.peZoomPhoto.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.peZoomPhoto.Properties.AllowScrollViaMouseDrag = false;
             this.peZoomPhoto.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.peZoomPhoto.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.peZoomPhoto.Properties.Appearance.Options.UseBackColor = true;
@@ -1345,7 +1349,6 @@
             this.pePlayVideo.Location = new System.Drawing.Point(224, 552);
             this.pePlayVideo.Name = "pePlayVideo";
             this.pePlayVideo.Properties.AllowScrollOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
-            this.pePlayVideo.Properties.AllowScrollViaMouseDrag = false;
             this.pePlayVideo.Properties.AllowZoomOnMouseWheel = DevExpress.Utils.DefaultBoolean.False;
             this.pePlayVideo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pePlayVideo.Properties.Appearance.Options.UseBackColor = true;
@@ -1360,6 +1363,45 @@
             // 
             this.bsTicketBill.DataMember = "ticket_bill";
             this.bsTicketBill.DataSource = this.dsReview;
+            // 
+            // mc_Image
+            // 
+            this.mc_Image.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lưuToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.inToolStripMenuItem,
+            this.inMànHìnhToolStripMenuItem});
+            this.mc_Image.Name = "mc_Image";
+            this.mc_Image.Size = new System.Drawing.Size(153, 98);
+            // 
+            // lưuToolStripMenuItem
+            // 
+            this.lưuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuToolStripMenuItem.Image")));
+            this.lưuToolStripMenuItem.Name = "lưuToolStripMenuItem";
+            this.lưuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lưuToolStripMenuItem.Text = "Lưu";
+            this.lưuToolStripMenuItem.Click += new System.EventHandler(this.lưuToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // inToolStripMenuItem
+            // 
+            this.inToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inToolStripMenuItem.Image")));
+            this.inToolStripMenuItem.Name = "inToolStripMenuItem";
+            this.inToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inToolStripMenuItem.Text = "In ảnh";
+            this.inToolStripMenuItem.Click += new System.EventHandler(this.inToolStripMenuItem_Click);
+            // 
+            // inMànHìnhToolStripMenuItem
+            // 
+            this.inMànHìnhToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inMànHìnhToolStripMenuItem.Image")));
+            this.inMànHìnhToolStripMenuItem.Name = "inMànHìnhToolStripMenuItem";
+            this.inMànHìnhToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inMànHìnhToolStripMenuItem.Text = "In màn hình";
+            this.inMànHìnhToolStripMenuItem.Click += new System.EventHandler(this.inMànHìnhToolStripMenuItem_Click);
             // 
             // PostReviewList
             // 
@@ -1430,6 +1472,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.peZoomPhoto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pePlayVideo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTicketBill)).EndInit();
+            this.mc_Image.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1539,5 +1582,10 @@
         private DevExpress.XtraEditors.CheckEdit checkEditSuspect;
         private System.Windows.Forms.BindingSource bsTicketBill;
         private DevExpress.XtraEditors.LabelControl lbl_Note;
+        private System.Windows.Forms.ContextMenuStrip mc_Image;
+        private System.Windows.Forms.ToolStripMenuItem lưuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem inToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inMànHìnhToolStripMenuItem;
     }
 }
